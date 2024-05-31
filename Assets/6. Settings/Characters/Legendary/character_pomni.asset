@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc77ba5bdead465a9e7a64059ec3ef30, type: 3}
+  m_Name: character_pomni
+  m_EditorClassIdentifier: 
+  id: character_pomni
+  icon: {fileID: 21300000, guid: 00f8f0e0ed5a54d4db6dcfffcd1bff57, type: 3}
+  rarity: 3
+  currencyType: 0
+  price: 15000
+  booster: 2.9
+  prefab: {fileID: 8236743331774928071, guid: d495b5d031b569b44b28a998aeebb94c, type: 3}

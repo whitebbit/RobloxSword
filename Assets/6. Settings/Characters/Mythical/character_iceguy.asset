@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc77ba5bdead465a9e7a64059ec3ef30, type: 3}
+  m_Name: character_iceguy
+  m_EditorClassIdentifier: 
+  id: character_iceguy
+  icon: {fileID: 21300000, guid: a076890449ed60045b4a69caef25cd33, type: 3}
+  rarity: 2
+  currencyType: 0
+  price: 1500
+  booster: 1.75
+  prefab: {fileID: 6025349770811948952, guid: 9043f91554128404cb46861f2c14551e, type: 3}

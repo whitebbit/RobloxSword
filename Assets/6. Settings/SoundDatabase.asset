@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b4b5855091418cb1d40c19a607872f, type: 3}
+  m_Name: SoundDatabase
+  m_EditorClassIdentifier: 
+  items:
+  - id: action
+    sound: {fileID: 8300000, guid: b613c78f062dd4866ac078c8bb9c87ec, type: 3}
+  - id: click
+    sound: {fileID: 8300000, guid: 638309e668bc940c3ac9ffd9119315bb, type: 3}
+  - id: unlock
+    sound: {fileID: 8300000, guid: dcf0c3cc51ee24c48b3dc514997c97a5, type: 3}
+  - id: select
+    sound: {fileID: 8300000, guid: 5cff0594373c24f339c521545a898233, type: 3}
+  - id: step
+    sound: {fileID: 8300000, guid: f45c26b8c34c140fab490c90f967016c, type: 3}
+  - id: jump
+    sound: {fileID: 8300000, guid: 2e0dccecbf4834202833e6a134209a5f, type: 3}
