@@ -99,8 +99,8 @@ MonoBehaviour:
     m_Localized: You
     m_Metadata:
       m_Items: []
-  - m_Id: 5610734721572864
-    m_Localized: Default Sword
+  - m_Id: 6362204521766912
+    m_Localized: Do you want to fight?
     m_Metadata:
       m_Items: []
   - m_Id: 5622597853257728
@@ -115,6 +115,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5461703773161259397
+  - m_Id: 6371677910999040
+    m_Localized: dsfsd
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

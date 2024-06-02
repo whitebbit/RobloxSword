@@ -99,16 +99,20 @@ MonoBehaviour:
     m_Key: you
     m_Metadata:
       m_Items: []
-  - m_Id: 5610734721572864
-    m_Key: default_sword_name
-    m_Metadata:
-      m_Items: []
   - m_Id: 5622597853257728
-    m_Key: New Entry
+    m_Key: recommended
     m_Metadata:
       m_Items: []
   - m_Id: 5664449675534336
     m_Key: gate_required
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6362204521766912
+    m_Key: enemy_battle_replic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6371677910999040
+    m_Key: sword_name_0
     m_Metadata:
       m_Items: []
   m_Metadata:

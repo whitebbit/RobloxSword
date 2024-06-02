@@ -14,24 +14,31 @@ using VInspector;
 
 namespace _3._Scripts.Interactive
 {
-    public class BattleArena : MonoBehaviour, IInteractive
+    public class BattleArena : MonoBehaviour
     {
         [Tab("Components")]
         [SerializeField] private CinemachineVirtualCamera cam;
-        [SerializeField] private Enemy enemy;
 
-        [Tab("Positions")]
-        [SerializeField] private SerializableTransform enemyTransform;
-        [SerializeField] private SerializableTransform playerTransform;
+        [Tab("Positions")] [SerializeField]
+        private Transform centerPoint;
+
+        
+        [Header("Enemy")]
+        [SerializeField] private Transform enemyPoint;
+
+        
+        [Header("Player")]
+        [SerializeField] private Transform playerPoint;
 
         [Tab("UI")]
         [SerializeField] private CurrencyCounterEffect counterEffect;
 
+        private Enemy _enemy;
         private Player.Player _player;
         private MiniGamePanel _miniGamePanel;
         private ButtonsPanel _buttonsPanel;
 
-        private void Awake()
+        private void Start()
         {
             InitializeComponents();
         }
@@ -43,8 +50,9 @@ namespace _3._Scripts.Interactive
             _buttonsPanel = UIManager.Instance.GetPanel<ButtonsPanel>();
         }
 
-        public void Interact()
+        public void StartBattle(Enemy enemy)
         {
+            _enemy = enemy;
             TeleportPlayer();
             SetupEnemy();
             InitializeUI();
@@ -53,15 +61,15 @@ namespace _3._Scripts.Interactive
 
         private void TeleportPlayer()
         {
-            _player.Teleport(playerTransform.position);
-            _player.transform.DORotate(playerTransform.rotation, 0.1f);
+            _player.Teleport(playerPoint.position);
+            _player.transform.DOLookAt(centerPoint.position, 0.1f, AxisConstraint.Y);
         }
 
         private void SetupEnemy()
         {
-            var eTransform = enemy.transform;
-            eTransform.position = enemyTransform.position;
-            eTransform.eulerAngles = enemyTransform.rotation;
+            var eTransform = _enemy.transform;
+            eTransform.position = enemyPoint.position;
+            eTransform.DOLookAt(centerPoint.position, 0.1f, AxisConstraint.Y);
         }
 
         private void InitializeUI()
@@ -72,7 +80,7 @@ namespace _3._Scripts.Interactive
             _miniGamePanel.OnLose += HandleLose;
             _miniGamePanel.OnWin += HandleWin;
 
-            _miniGamePanel.StartGame(_player.Strength(), enemy.Data);
+            _miniGamePanel.StartGame(_player.Strength(), _enemy.Data);
         }
 
         private void HandleWin()
@@ -87,8 +95,8 @@ namespace _3._Scripts.Interactive
 
         private void EndGame(bool playerWon)
         {
-            var winnerAnimator = playerWon ? _player.Animator : enemy.Animator;
-            var loserAnimator = playerWon ? enemy.Animator : _player.Animator;
+            var winnerAnimator = playerWon ? _player.Animator : _enemy.Animator;
+            var loserAnimator = playerWon ? _enemy.Animator : _player.Animator;
 
             StartCoroutine(ExecuteBattleAnimations(winnerAnimator, loserAnimator));
             StartCoroutine(DelayedEnd(playerWon));
@@ -109,21 +117,16 @@ namespace _3._Scripts.Interactive
 
             if (playerWon)
             {
-                WalletManager.SecondCurrency += enemy.Data.Cups;
-                EffectPanel.Instance.SpawnEffect(counterEffect).Initialize(CurrencyType.Second, enemy.Data.Cups);
+                WalletManager.SecondCurrency += _enemy.Data.Cups;
+                EffectPanel.Instance.SpawnEffect(counterEffect).Initialize(CurrencyType.Second, _enemy.Data.Cups);
             }
 
-            enemy.TeleportToStart();
-
+            _enemy.TeleportToStart();
+            
             _miniGamePanel.Enabled = false;
             _buttonsPanel.Enabled = true;
 
             CameraController.Instance.SwapToMain();
-        }
-
-        public void StopInteract()
-        {
-            // Implementation for StopInteract if needed
         }
     }
 }

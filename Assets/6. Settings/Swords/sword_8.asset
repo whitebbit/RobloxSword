@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fea4c2b0e71a40b8a26889a0ad76becc, type: 3}
-  m_Name: default_sword
+  m_Name: sword_8
   m_EditorClassIdentifier: 
-  id: default_sword
-  strengthBooster: 0.25
-  sword: {fileID: 6567278287250185626, guid: 01910e21424c2cf48ad331fc99531105, type: 3}
+  id: sword_8
+  strengthBooster: 0.5
+  sword: {fileID: 6567278287250185626, guid: 7b76b82b6bc050f4f8e75f4193bcfa34, type: 3}
   enemyData:
-    <Strength>k__BackingField: 2
-    <Cups>k__BackingField: 2
-    <Icon>k__BackingField: {fileID: 21300000, guid: ac4cb986292579e4f9e2b45b9166c53b, type: 3}
-    <LocalizeID>k__BackingField: default_sword_name
+    <Strength>k__BackingField: 0
+    <Cups>k__BackingField: 100
+    <Icon>k__BackingField: {fileID: 21300000, guid: 8c7867b1ed7413b4c8e5a2ee70da3d30, type: 3}
+    <LocalizeID>k__BackingField: sword_name_8
   getState:
     position: {x: 0.27, y: 0.403, z: -0.102}
     rotation: {x: -40.486, y: -112.715, z: 112.53}
     scale: {x: 4, y: 4, z: 4}
   handState:
     position: {x: -0.182, y: 0.447, z: -0.165}
-    rotation: {x: 186.203, y: 259.914, z: -202.23}
-    scale: {x: 4, y: 4, z: 4}
+    rotation: {x: -6.542, y: 80.2, z: 152.053}
+    scale: {x: 5, y: 5, z: 5}

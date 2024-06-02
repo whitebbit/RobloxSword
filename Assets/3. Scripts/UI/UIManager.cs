@@ -19,22 +19,18 @@ namespace _3._Scripts.UI
         public UIScreen CurrentScreen => currentScreen;
         private bool onTransition;
         public bool Active { get; set; }
+
         protected override void OnAwake()
         {
             base.OnAwake();
-            if(Instance != null && Instance != this)
+            if (Instance != null && Instance != this)
                 Destroy(gameObject);
-            
+
             DontDestroyOnLoad(gameObject);
-            
+
             InitializeScreens();
             InitializeWidgets();
-            currentScreen.Open();
-        }
-
-        private void Start()
-        {
-            GetPanel<ButtonsPanel>().Enabled = true;
+            currentScreen.Open(onComplete: () => GetPanel<ButtonsPanel>().Enabled = true);
         }
 
         public void SetScreen(string id, TweenCallback onCloseComplete = null, TweenCallback onOpenComplete = null)
@@ -51,7 +47,7 @@ namespace _3._Scripts.UI
 
         public T GetWidget<T>(int siblingIndex = -1) where T : UIWidget
         {
-            var widget = (T)widgets.FirstOrDefault(w => w is T);
+            var widget = (T) widgets.FirstOrDefault(w => w is T);
             if (widget == null) return default;
 
             widget.SetScreen(currentScreen, siblingIndex);

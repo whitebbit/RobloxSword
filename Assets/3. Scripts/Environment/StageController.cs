@@ -11,7 +11,8 @@ namespace _3._Scripts.Environment
         [SerializeField] private List<Stage> stages = new();
         
         public Stage CurrentStage { get; private set; }
-        private void Awake()
+
+        protected override void OnAwake()
         {
             CurrentStage = Instantiate(stages[GBGames.saves.stageID], transform);
             CurrentStage.transform.localPosition = Vector3.zero;
