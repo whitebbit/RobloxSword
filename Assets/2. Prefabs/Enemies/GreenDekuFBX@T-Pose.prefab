@@ -204,7 +204,7 @@ MonoBehaviour:
     <Strength>k__BackingField: 1e+9
     <Cups>k__BackingField: 3500000
     <Icon>k__BackingField: {fileID: 21300000, guid: 7b8f74fb9cd95b64783300232917ec3c, type: 3}
-    <LocalizeID>k__BackingField: 
+    <LocalizeID>k__BackingField: Enemy_4
   arena: {fileID: 0}
   text: {fileID: 2963903677742659445}
 --- !u!1 &1265770422756486911

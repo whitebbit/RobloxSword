@@ -131,6 +131,102 @@ MonoBehaviour:
     m_Key: final_boss
     m_Metadata:
       m_Items: []
+  - m_Id: 6864496188198912
+    m_Key: Enemy_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866652907704320
+    m_Key: Enemy_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866733220237312
+    m_Key: Enemy_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866823980781568
+    m_Key: Enemy_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866904821796864
+    m_Key: Enemy_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866927345209344
+    m_Key: Enemy_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866945472991232
+    m_Key: Enemy_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866958575996928
+    m_Key: Enemy_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866975047028736
+    m_Key: Enemy_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867429894131712
+    m_Key: sword_name_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867469802934272
+    m_Key: sword_name_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867481152720896
+    m_Key: sword_name_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867492540256256
+    m_Key: sword_name_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867521799720960
+    m_Key: sword_name_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867533816401920
+    m_Key: sword_name_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867550446817280
+    m_Key: sword_name_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867564208328704
+    m_Key: sword_name_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867577881759744
+    m_Key: sword_name_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867591139954688
+    m_Key: sword_name_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867603357962240
+    m_Key: sword_name_10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867620168732672
+    m_Key: sword_name_11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867688770768896
+    m_Key: sword_name_12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867699663376384
+    m_Key: sword_name_13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867760879243264
+    m_Key: sword_name_14
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

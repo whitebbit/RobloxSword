@@ -139,6 +139,102 @@ MonoBehaviour:
     m_Localized: <color=#FF0000>The final boss</color>
     m_Metadata:
       m_Items: []
+  - m_Id: 6866652907704320
+    m_Localized: Onyx Warlord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6864496188198912
+    m_Localized: Blade of the Night
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866733220237312
+    m_Localized: Shadow Overlord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866823980781568
+    m_Localized: Steel Tyrant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866904821796864
+    m_Localized: Master of Blades
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866927345209344
+    m_Localized: Blood Guardian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866945472991232
+    m_Localized: Flame Arbiter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866958575996928
+    m_Localized: Thunder Gladiator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6866975047028736
+    m_Localized: Reaper Scythe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867429894131712
+    m_Localized: Shadow of Fate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867469802934272
+    m_Localized: Flame Blade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867481152720896
+    m_Localized: Ice Heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867492540256256
+    m_Localized: Thunder Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867521799720960
+    m_Localized: Dragon Fang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867533816401920
+    m_Localized: Radiant Dawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867550446817280
+    m_Localized: Abyss of Agony
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867564208328704
+    m_Localized: Curse of Darkness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867577881759744
+    m_Localized: Star Chime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867591139954688
+    m_Localized: Stormblade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867603357962240
+    m_Localized: Sword of Eternal Light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867620168732672
+    m_Localized: Runic Ravager
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867688770768896
+    m_Localized: Soul Eater
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867699663376384
+    m_Localized: Blood Slicer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6867760879243264
+    m_Localized: Sword of Heavenly Power
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
