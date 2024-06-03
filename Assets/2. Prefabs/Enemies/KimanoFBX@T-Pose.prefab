@@ -997,8 +997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    <Strength>k__BackingField: 0
-    <Cups>k__BackingField: 0
+    <Strength>k__BackingField: 1.5e+14
+    <Cups>k__BackingField: 5e+10
     <Icon>k__BackingField: {fileID: 21300000, guid: 4ee2d8fad16772f4aac25898bf6cce3b, type: 3}
     <LocalizeID>k__BackingField: 
   arena: {fileID: 0}
