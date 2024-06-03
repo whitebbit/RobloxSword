@@ -23,7 +23,7 @@ namespace _3._Scripts.Swords
             _currentSword = sword;
         }
         
-        public void SetHandState(Sword sword, float duration = 0.15f)
+        public void SetHandState(Sword sword, float duration = 0.25f)
         {
             var swordTransform = sword.transform;
             var st = sword.Data.HandState;

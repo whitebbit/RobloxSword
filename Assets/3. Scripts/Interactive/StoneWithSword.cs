@@ -128,7 +128,6 @@ namespace _3._Scripts.Interactive
         {
             var player = Player.Player.Instance;
 
-
             player.Animator.SetTrigger("GetSword");
             player.SwordHandler.SetHandState(_currentSword);
             _currentSword = null;

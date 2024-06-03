@@ -120,27 +120,27 @@ MonoBehaviour:
       m_Items:
       - rid: 5461703773161259396
   - m_Id: 6718458100326400
-    m_Localized: "<color=#239C1B>\u0421\u0442\u0430\u0440\u0442\u0435\u0440</color>"
+    m_Localized: "<color=#3BDA00>\u0421\u0442\u0430\u0440\u0442\u0435\u0440</color>"
     m_Metadata:
       m_Items:
       - rid: 5461703773161259396
   - m_Id: 6718503163928576
-    m_Localized: "<color=#328FB7>\u0421\u0440\u0435\u0434\u043D\u0438\u0439</color>"
+    m_Localized: "<color=#38B2CE>\u0421\u0440\u0435\u0434\u043D\u0438\u0439</color>"
     m_Metadata:
       m_Items:
       - rid: 5461703773161259396
   - m_Id: 6718541399203840
-    m_Localized: "<color=#B44CB1>\u0416\u0435\u0441\u0442\u043A\u0438\u0439</color>"
+    m_Localized: "<color=#D836C4>\u0416\u0435\u0441\u0442\u043A\u0438\u0439</color>"
     m_Metadata:
       m_Items:
       - rid: 5461703773161259396
   - m_Id: 6718588497043456
-    m_Localized: "<color=#B1A635>\u042D\u043A\u0441\u0442\u0440\u0435\u043C\u0430\u043B\u044C\u043D\u044B\u0439</color>"
+    m_Localized: "<color=#FFCA00>\u042D\u043A\u0441\u0442\u0440\u0435\u043C\u0430\u043B\u044C\u043D\u044B\u0439</color>"
     m_Metadata:
       m_Items:
       - rid: 5461703773161259396
   - m_Id: 6718662245490688
-    m_Localized: "<color=#901E1C>\u0424\u0438\u043D\u0430\u043B\u044C\u043D\u044B\u0439
+    m_Localized: "<color=#FF0000>\u0424\u0438\u043D\u0430\u043B\u044C\u043D\u044B\u0439
       \u0431\u043E\u0441\u0441</color>"
     m_Metadata:
       m_Items: []

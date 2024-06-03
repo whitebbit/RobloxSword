@@ -18,6 +18,8 @@ namespace _3._Scripts.Pets
     public class PetUnlocker : MonoBehaviour
     {
         [SerializeField] private List<PetData> data = new();
+        [SerializeField] private int price;
+        
         [Tab("Components")] [SerializeField] private Canvas canvas;
         [SerializeField] private TMP_Text priceText;
         [SerializeField] private Image currencyIcon;
@@ -31,21 +33,11 @@ namespace _3._Scripts.Pets
         {
             UpdatePrice();
         }
-
-        private int Price()
-        {
-            return GBGames.saves.petSaves.unlocked.Count switch
-            {
-                <= 0 => 1,
-                >0 and <10 => 5,
-                >=10 and <15 => 10,
-                >= 15 => 20
-            };
-        }
+        
 
         private void UnlockRandom()
         {
-            if (!WalletManager.TrySpend(CurrencyType.Second, Price())) return;
+            if (!WalletManager.TrySpend(CurrencyType.Second, price)) return;
 
             var list = data.Where(p => !GBGames.saves.petSaves.Unlocked(p.ID)).ToList();
             if (list.Count <= 0) return;
@@ -55,7 +47,7 @@ namespace _3._Scripts.Pets
 
             GBGames.saves.petSaves.Unlock(rand.ID);
             GBGames.instance.Save();
-            WalletManager.SecondCurrency -= Price();
+            WalletManager.SecondCurrency -= price;
             UpdatePrice();
         }
 
@@ -99,7 +91,7 @@ namespace _3._Scripts.Pets
         {
             var image = Configuration.Instance.GetCurrency(CurrencyType.Second).Icon;
             currencyIcon.sprite = image;
-            priceText.text = Price().ToString();
+            priceText.text = price.ToString();
         }
 
         private void OnMouseDown()

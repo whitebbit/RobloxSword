@@ -116,27 +116,27 @@ MonoBehaviour:
       m_Items:
       - rid: 5461703773161259397
   - m_Id: 6718458100326400
-    m_Localized: <color=#239C1B>Starter</color>
+    m_Localized: <color=##3BDA00>Starter</color>
     m_Metadata:
       m_Items:
       - rid: 5461703773161259397
   - m_Id: 6718503163928576
-    m_Localized: <color=#328FB7>Average</color>
+    m_Localized: <color=#38B2CE>Average</color>
     m_Metadata:
       m_Items:
       - rid: 5461703773161259397
   - m_Id: 6718541399203840
-    m_Localized: <color=#B44CB1>Hard</color>
+    m_Localized: <color=#D836C4>Hard</color>
     m_Metadata:
       m_Items:
       - rid: 5461703773161259397
   - m_Id: 6718588497043456
-    m_Localized: <color=#B1A635>Extreme</color>
+    m_Localized: <color=#FFCA00>Extreme</color>
     m_Metadata:
       m_Items:
       - rid: 5461703773161259397
   - m_Id: 6718662245490688
-    m_Localized: <color=#901E1C>The final boss</color>
+    m_Localized: <color=#FF0000>The final boss</color>
     m_Metadata:
       m_Items: []
   references:
