@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using Cinemachine;
@@ -25,12 +26,13 @@ namespace _3._Scripts.Interactive
         [SerializeField] private Transform playerPoint;
 
         [Tab("Sword")] [SerializeField] private SwordData swordData;
+        [SerializeField] private SerializableTransform modelTransform;
+        [Tab("UI")] 
         [SerializeField] private LocalizeStringEvent swordName;
         [SerializeField] private LocalizeStringEvent recommendationText;
-        [SerializeField] private SerializableTransform modelTransform;
-        [Tab("UI")] [SerializeField] private CurrencyCounterEffect counterEffect;
-
-
+        [SerializeField] private ComplexityText complexityText;
+        
+        [SerializeField] private CurrencyCounterEffect counterEffect;
         private Transform _swordModel;
         private Swords.Sword _currentSword;
 
@@ -38,7 +40,13 @@ namespace _3._Scripts.Interactive
         {
             InitializeSword();
             recommendationText.SetVariable("value",
-                WalletManager.ConvertToWallet((int) Mathf.Ceil(swordData.EnemyData.Strength)));
+                WalletManager.ConvertToWallet((int) Mathf.Ceil(swordData.EnemyData.Strength * 1.5f)));
+        }
+
+        private void Start()
+        {
+            complexityText.SetComplexity(swordData.Type);
+
         }
 
         private void InitializeSword()

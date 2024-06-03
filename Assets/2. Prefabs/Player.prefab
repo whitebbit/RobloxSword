@@ -274,11 +274,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0dd6cb2d1dd4612aeed07f3d8ecb0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCooldownTime: 1.25
+  baseCooldownTime: 0.75
   actionAnimations:
   - {fileID: 7400000, guid: 47bb4af6ef4c92e49ba0c2699c6459a4, type: 2}
-  - {fileID: 7400000, guid: 762802879663d634a999fd5ca7c4deee, type: 2}
   - {fileID: 7400000, guid: 25aeeddaec483194d8716b322a15cb95, type: 2}
+  - {fileID: 7400000, guid: af74b7b29150844419f8402b001f6e9e, type: 2}
   detector: {fileID: 4185699559551035625}
 --- !u!114 &2444070233650219842
 MonoBehaviour:

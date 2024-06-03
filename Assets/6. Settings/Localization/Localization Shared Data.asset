@@ -111,8 +111,24 @@ MonoBehaviour:
     m_Key: enemy_battle_replic
     m_Metadata:
       m_Items: []
-  - m_Id: 6371677910999040
-    m_Key: sword_name_0
+  - m_Id: 6718458100326400
+    m_Key: starter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6718503163928576
+    m_Key: average
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6718541399203840
+    m_Key: hard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6718588497043456
+    m_Key: extreme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6718662245490688
+    m_Key: final_boss
     m_Metadata:
       m_Items: []
   m_Metadata:

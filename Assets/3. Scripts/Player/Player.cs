@@ -61,15 +61,19 @@ namespace _3._Scripts.Player
 
         public float TrainingStrength()
         {
+            const float baseClick = 22.1f;
+            
             var pets = Configuration.Instance.AllPets.Where(p => GBGames.saves.petSaves.IsCurrent(p.ID)).ToList();
             var sword = Configuration.Instance.SwordData.FirstOrDefault(s => s.ID == GBGames.saves.swordSaves.current);
-            var swordStrength = sword == null ? 0 : sword.StrengthBooster;
+            var swordStrength = sword == null ? 1 : sword.StrengthBooster;
             var character =
                 Configuration.Instance.AllCharacters.FirstOrDefault(c => GBGames.saves.characterSaves.IsCurrent(c.ID));
-            var booster = BoostersHandler.Instance.X2Income ? 2 : 1;
-
-            return (character.Booster + swordStrength + (character.Booster * pets.Sum(pet => pet.Booster) / 100)) *
-                   booster;
+            var x2 = BoostersHandler.Instance.X2Income ? 2 : 1;
+            var strength = (baseClick * swordStrength);
+            
+            var booster = pets.Sum(p => p.Booster) + character.Booster;
+            
+            return  (strength + (strength * booster / 100)) * x2;
         }
 
 

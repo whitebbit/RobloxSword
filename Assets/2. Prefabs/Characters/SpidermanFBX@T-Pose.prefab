@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 368013058870952447}
-  - component: {fileID: 3030157451159877590}
+  - component: {fileID: 2033132685520673574}
   m_Layer: 0
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
@@ -64,7 +64,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8255298570221938036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3030157451159877590
+--- !u!114 &2033132685520673574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,13 +73,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 846514641953522485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46851f2ce93b407daaf40d7d85f68b90, type: 3}
+  m_Script: {fileID: 11500000, guid: 71d8751f982a44d4a337fb73d5aebab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8508425373311890931, guid: e9867307c10091c46abb03fda6174205, type: 3}
-  position: {x: 0, y: 0.35, z: -0.11}
-  rotation: {x: 0, y: -270, z: 0}
-  scale: {x: -0.175, y: 0.175, z: 0.175}
 --- !u!1 &1370207182302731153
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2e96b3a3ac42f3b82b1ba321b4a1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordHandler: {fileID: 2033132685520673574}
 --- !u!1 &8265803874476607900
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +966,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2568983960105259279}
-  - component: {fileID: 2822006777230714209}
   m_Layer: 0
   m_Name: mixamorig:LeftHand
   m_TagString: Untagged
@@ -992,19 +988,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 372174573302711005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2822006777230714209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8685819573524393266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46851f2ce93b407daaf40d7d85f68b90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 8508425373311890931, guid: e9867307c10091c46abb03fda6174205, type: 3}
-  position: {x: 0, y: 0.35, z: -0.12}
-  rotation: {x: 0, y: 270, z: 0}
-  scale: {x: 0.175, y: 0.175, z: 0.175}

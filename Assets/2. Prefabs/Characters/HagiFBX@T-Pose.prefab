@@ -168,7 +168,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 184866832646852254}
-  - component: {fileID: 289601176409121491}
   m_Layer: 0
   m_Name: mixamorig:LeftHand
   m_TagString: Untagged
@@ -191,22 +190,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8366985540024881976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &289601176409121491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1379269605857259665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46851f2ce93b407daaf40d7d85f68b90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 8508425373311890931, guid: e9867307c10091c46abb03fda6174205, type: 3}
-  position: {x: 0, y: 0.35, z: -0.12}
-  rotation: {x: 0, y: 270, z: 0}
-  scale: {x: 0.175, y: 0.175, z: 0.175}
 --- !u!1 &1489215716830802681
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8960173709121455549}
-  - component: {fileID: 5967201030851278116}
+  - component: {fileID: 1686555272651450856}
   m_Layer: 0
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
@@ -696,7 +679,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 685197245329746798}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5967201030851278116
+--- !u!114 &1686555272651450856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -705,13 +688,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6028669228745973088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46851f2ce93b407daaf40d7d85f68b90, type: 3}
+  m_Script: {fileID: 11500000, guid: 71d8751f982a44d4a337fb73d5aebab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8508425373311890931, guid: e9867307c10091c46abb03fda6174205, type: 3}
-  position: {x: 0, y: 0.35, z: -0.11}
-  rotation: {x: 0, y: -270, z: 0}
-  scale: {x: -0.175, y: 0.175, z: 0.175}
 --- !u!1 &6640891215133525138
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,6 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2e96b3a3ac42f3b82b1ba321b4a1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordHandler: {fileID: 1686555272651450856}
 --- !u!1 &9094131295933942334
 GameObject:
   m_ObjectHideFlags: 0

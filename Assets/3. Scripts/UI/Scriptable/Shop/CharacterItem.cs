@@ -16,7 +16,7 @@ namespace _3._Scripts.UI.Scriptable.Shop
         public float Booster => booster;
         public override string Title()
         {
-            return $"+{booster}";
+            return $"+{booster}%";
         }
     }
 }

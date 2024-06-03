@@ -11,9 +11,11 @@ namespace _3._Scripts.Swords.Scriptable
         [Tab("Main")]
         [SerializeField] private string id;
         [SerializeField] public float strengthBooster;
-
-        [SerializeField] private Sword sword;
+        [SerializeField] private ComplexityType type;
+        [Space]
         [SerializeField] private EnemyData enemyData;
+        [Space]
+        [SerializeField] private Sword sword;
 
         [Tab("Transform")]
         [SerializeField] private SerializableTransform getState;
@@ -28,5 +30,7 @@ namespace _3._Scripts.Swords.Scriptable
 
         public float StrengthBooster => strengthBooster;
         public EnemyData EnemyData => enemyData;
+
+        public ComplexityType Type => type;
     }
 }
