@@ -15,6 +15,7 @@ namespace _3._Scripts.Enemies
         [SerializeField] private EnemyData data;
         [SerializeField] private BattleArena arena;
         [SerializeField] private LocalizeStringEvent text;
+        [SerializeField] private LocalizeStringEvent nameText;
 
         public EnemyData Data => data;
         public PlayerAnimator Animator => _animator;
@@ -38,6 +39,7 @@ namespace _3._Scripts.Enemies
             _animator.SetSpeed(0);
             
             text.SetVariable("value", data.Strength.ToString());
+            nameText.SetReference(data.LocalizeID);
         }
 
         public void TeleportToStart()
@@ -45,12 +47,14 @@ namespace _3._Scripts.Enemies
             transform.position = _startPosition;
             transform.eulerAngles = _startRotation;
             text.gameObject.SetActive(true);
+            nameText.gameObject.SetActive(true);
         }
 
         public void Interact()
         {
             arena.StartBattle(this);
             text.gameObject.SetActive(false);
+            nameText.gameObject.SetActive(false);
         }
 
      
