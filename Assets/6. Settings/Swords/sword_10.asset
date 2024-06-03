@@ -16,8 +16,8 @@ MonoBehaviour:
   strengthBooster: 0.5
   sword: {fileID: 6567278287250185626, guid: 50e15d8fa25cc3c48937eec5725d81bc, type: 3}
   enemyData:
-    <Strength>k__BackingField: 0
-    <Cups>k__BackingField: 100
+    <Strength>k__BackingField: 2.8e+11
+    <Cups>k__BackingField: 1
     <Icon>k__BackingField: {fileID: 21300000, guid: 8c7867b1ed7413b4c8e5a2ee70da3d30, type: 3}
     <LocalizeID>k__BackingField: sword_name_10
   getState:

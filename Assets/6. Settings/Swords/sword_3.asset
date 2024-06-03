@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: sword_3
   m_EditorClassIdentifier: 
   id: sword_3
-  strengthBooster: 0.5
+  strengthBooster: 1.25
   sword: {fileID: 6567278287250185626, guid: f49915a48df82e242a65188c299ba405, type: 3}
   enemyData:
-    <Strength>k__BackingField: 0
-    <Cups>k__BackingField: 100
+    <Strength>k__BackingField: 41500
+    <Cups>k__BackingField: 1250
     <Icon>k__BackingField: {fileID: 21300000, guid: 8c7867b1ed7413b4c8e5a2ee70da3d30, type: 3}
     <LocalizeID>k__BackingField: sword_name_3
   getState:
