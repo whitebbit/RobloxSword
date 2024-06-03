@@ -8,6 +8,8 @@ using UnityEngine.Localization.Components;
 
 namespace _3._Scripts.Enemies
 {
+    [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(PlayerAnimator))]
     public class Enemy : MonoBehaviour, IInteractive
     {
         [SerializeField] private EnemyData data;

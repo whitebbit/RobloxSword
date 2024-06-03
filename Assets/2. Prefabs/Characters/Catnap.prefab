@@ -201,6 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 913193649786733340}
+  - component: {fileID: 729428589283061483}
   m_Layer: 0
   m_Name: mixamorig:LeftHand
   m_TagString: Untagged
@@ -223,6 +224,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 726331578996276878}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &729428589283061483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2296670761429270378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46851f2ce93b407daaf40d7d85f68b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8508425373311890931, guid: e9867307c10091c46abb03fda6174205, type: 3}
+  position: {x: 0, y: 0.35, z: -0.12}
+  rotation: {x: 0, y: 270, z: 0}
+  scale: {x: 0.175, y: 0.175, z: 0.175}
 --- !u!1 &2333858287338504649
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3205582863820494085}
+  - component: {fileID: 8097489156335217688}
   m_Layer: 0
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
@@ -548,6 +566,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2037104636126123278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8097489156335217688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392317879195724695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46851f2ce93b407daaf40d7d85f68b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8508425373311890931, guid: e9867307c10091c46abb03fda6174205, type: 3}
+  position: {x: 0, y: 0.35, z: -0.11}
+  rotation: {x: 0, y: -270, z: 0}
+  scale: {x: -0.175, y: 0.175, z: 0.175}
 --- !u!1 &5682273390168181364
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,7 +761,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 656615511188450699, guid: bd213ef27cf74d84d9818564e679e160, type: 3}
+  - {fileID: 2100000, guid: 6db9f92d858aa5d478e77fe7b6c04255, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

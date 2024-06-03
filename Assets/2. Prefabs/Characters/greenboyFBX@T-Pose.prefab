@@ -394,6 +394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6923229538798741294}
+  - component: {fileID: 356595643355017166}
   m_Layer: 0
   m_Name: mixamorig:LeftHand
   m_TagString: Untagged
@@ -416,6 +417,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2298175560594611871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &356595643355017166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4945874914819872507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46851f2ce93b407daaf40d7d85f68b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8508425373311890931, guid: e9867307c10091c46abb03fda6174205, type: 3}
+  position: {x: 0, y: 0.35, z: -0.12}
+  rotation: {x: 0, y: 270, z: 0}
+  scale: {x: 0.175, y: 0.175, z: 0.175}
 --- !u!1 &4962975346779358533
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +645,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5514487302744726797, guid: eb86f49c013c5434ea6ffd347d66e393, type: 3}
+  - {fileID: 2100000, guid: 35a33e4a56b83904190b335c27405f74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -723,6 +740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329070383145950426}
+  - component: {fileID: 2063905080412094325}
   m_Layer: 0
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
@@ -745,6 +763,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3024613541684397987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2063905080412094325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6428680352308504080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46851f2ce93b407daaf40d7d85f68b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8508425373311890931, guid: e9867307c10091c46abb03fda6174205, type: 3}
+  position: {x: 0, y: 0.35, z: -0.11}
+  rotation: {x: 0, y: -270, z: 0}
+  scale: {x: -0.175, y: 0.175, z: 0.175}
 --- !u!1 &6628681178524010052
 GameObject:
   m_ObjectHideFlags: 0
