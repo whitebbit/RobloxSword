@@ -69,6 +69,7 @@ namespace _3._Scripts.Interactive
         {
             var eTransform = _enemy.transform;
             eTransform.position = enemyPoint.position;
+            Debug.Log($"{enemyPoint.position} = {eTransform.position}");
             eTransform.DOLookAt(centerPoint.position, 0.1f, AxisConstraint.Y);
         }
 

@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: sword_12
   strengthBooster: 0.5
-  sword: {fileID: 6567278287250185626, guid: f9c3cf9865b0a6b47acca22a719fe632, type: 3}
+  type: 2
   enemyData:
     <Strength>k__BackingField: 7e+12
     <Cups>k__BackingField: 1
-    <Icon>k__BackingField: {fileID: 21300000, guid: 8c7867b1ed7413b4c8e5a2ee70da3d30, type: 3}
+    <Icon>k__BackingField: {fileID: 21300000, guid: 6e4459eefee3e2144b885e0650f67056, type: 3}
     <LocalizeID>k__BackingField: sword_name_12
+  sword: {fileID: 6567278287250185626, guid: f9c3cf9865b0a6b47acca22a719fe632, type: 3}
   getState:
     position: {x: 0.27, y: 0.403, z: -0.102}
     rotation: {x: -40.486, y: -112.715, z: 112.53}

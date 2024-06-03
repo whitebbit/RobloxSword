@@ -764,7 +764,7 @@ Animator:
   m_Controller: {fileID: 22100000, guid: 8a6cbe6fc47e64141b80825f088af21e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -787,7 +787,7 @@ MonoBehaviour:
   data:
     <Strength>k__BackingField: 0
     <Cups>k__BackingField: 5
-    <Icon>k__BackingField: {fileID: 21300000, guid: 00432620f3873a942a6da9a475424d91, type: 3}
+    <Icon>k__BackingField: {fileID: 21300000, guid: d43c313a13d675840868925570e2f916, type: 3}
     <LocalizeID>k__BackingField: you
   arena: {fileID: 0}
   text: {fileID: 2708317306237737650}
