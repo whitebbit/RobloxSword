@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cac3bca2d14b39ace880293787f63a, type: 3}
+  m_Name: Eagle
+  m_EditorClassIdentifier: 
+  id: pet_eagle_1
+  prefab: {fileID: 2882114378958916980, guid: f633cb19974a6b645a77c1b25824d4a2, type: 3}
+  currencyType: 0
+  booster: 0.8
+  icon: {fileID: 21300000, guid: 31c67b9171c7ff34ea7f579e2f9c926e, type: 3}
+  rarity: 1

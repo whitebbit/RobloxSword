@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cac3bca2d14b39ace880293787f63a, type: 3}
+  m_Name: MadNun
+  m_EditorClassIdentifier: 
+  id: pet_madnun_1
+  prefab: {fileID: 7162791404910326514, guid: e9673cdc19adae84cab425a24beffd6d, type: 3}
+  currencyType: 0
+  booster: 2
+  icon: {fileID: 21300000, guid: 00432620f3873a942a6da9a475424d91, type: 3}
+  rarity: 1
