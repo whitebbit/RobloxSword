@@ -3441,6 +3441,10 @@ PrefabInstance:
       propertyPath: cupsToUnlock
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8003632474168469812, guid: 20084845041a2454b9b1b709532858b2, type: 3}
+      propertyPath: swordToUnlock
+      value: 
+      objectReference: {fileID: 11400000, guid: a52c7cbeae3e3664ca06c4595b6fc05f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
