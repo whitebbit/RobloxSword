@@ -12,6 +12,7 @@ namespace _3._Scripts.Environment
 
         public Stage CurrentStage { get; private set; }
         public float CurrentPetBoosterMultiplier => CurrentStage.PetsBoosterMultiplier;
+        public float CurrentGiftsBoosterMultiplier => CurrentStage.GiftsBoosterMultiplier;
 
         protected override void OnAwake()
         {

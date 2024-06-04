@@ -239,6 +239,10 @@ MonoBehaviour:
     m_Key: fight
     m_Metadata:
       m_Items: []
+  - m_Id: 7122991460786176
+    m_Key: ad_in
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

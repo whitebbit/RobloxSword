@@ -8,6 +8,9 @@ namespace GBGamesPlugin
 {
     public partial class GBGames
     {
+        public static bool NowAdsShow =>
+            interstitialState == InterstitialState.Opened || rewardedState == RewardedState.Opened;
+        
         #region Banner
 
         /// <summary>

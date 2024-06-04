@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using _3._Scripts.Config;
 using DG.Tweening;
 using GBGamesPlugin;
 using UnityEngine;
@@ -16,9 +17,7 @@ namespace _3._Scripts.Boosters
 
         [SerializeField] private Image adImage;
         
-
-        [Tab("Settings")] [SerializeField] private float timeToDeactivate;
-
+        
         public Action onActivateBooster;
         public Action onDeactivateBooster;
         private Button _button;
@@ -45,14 +44,14 @@ namespace _3._Scripts.Boosters
             _used = true;
             onActivateBooster?.Invoke();
             cooldownImage.fillAmount = 1;
-            cooldownImage.DOFillAmount(0, timeToDeactivate).SetEase(Ease.Linear);
+            cooldownImage.DOFillAmount(0, RemoteConfiguration.BoostTime).SetEase(Ease.Linear);
             adImage.gameObject.SetActive(false);
             StartCoroutine(Deactivate());
         }
 
         private IEnumerator Deactivate()
         {
-            yield return new WaitForSeconds(timeToDeactivate);
+            yield return new WaitForSeconds(RemoteConfiguration.BoostTime);
             onDeactivateBooster?.Invoke();
             adImage.gameObject.SetActive(true);
             cooldownImage.fillAmount = 0;

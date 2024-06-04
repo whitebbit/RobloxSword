@@ -38,7 +38,7 @@ namespace _3._Scripts.Enemies
             _animator.SetGrounded(true);
             _animator.SetSpeed(0);
             
-            text.SetVariable("value", data.Strength.ToString());
+            text.SetVariable("value", data.CurrentStrength.ToString());
             nameText.SetReference(data.LocalizeID);
         }
 

@@ -6,6 +6,7 @@ using _3._Scripts.Currency.Scriptable;
 using _3._Scripts.Localization;
 using _3._Scripts.UI.Scriptable.Shop;
 using _3._Scripts.UI.Structs;
+using _3._Scripts.Wallet;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
@@ -29,7 +30,7 @@ namespace _3._Scripts.UI.Elements
         [SerializeField] private TMP_Text price;
         [Tab("Localization")] [SerializeField] private string selectKey;
         [SerializeField] private string selectedKey;
-        
+
         public ShopItem Data { get; private set; }
         private Button _button;
 
@@ -55,7 +56,7 @@ namespace _3._Scripts.UI.Elements
         public async void Select()
         {
             var localizedString = await selectedKey.GetTranslate();
-            
+
             price.text = localizedString;
             currencyIcon.gameObject.SetActive(false);
         }
@@ -66,10 +67,10 @@ namespace _3._Scripts.UI.Elements
             price.text = localizedString;
             currencyIcon.gameObject.SetActive(false);
         }
-        
+
         public void Lock()
         {
-            price.text = Data.Price.ToString();
+            price.text = WalletManager.ConvertToWallet((decimal) Data.Price);
             currencyIcon.gameObject.SetActive(true);
         }
 

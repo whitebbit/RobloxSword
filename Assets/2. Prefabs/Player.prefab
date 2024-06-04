@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0dd6cb2d1dd4612aeed07f3d8ecb0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCooldownTime: 0.75
+  baseCooldownTime: 0.65
   actionAnimations:
   - {fileID: 7400000, guid: 47bb4af6ef4c92e49ba0c2699c6459a4, type: 2}
   - {fileID: 7400000, guid: 25aeeddaec483194d8716b322a15cb95, type: 2}
@@ -329,7 +329,7 @@ MonoBehaviour:
   gizmos:
     type: 1
     color: {r: 1, g: 0, b: 0, a: 0.5019608}
-  radius: 1
+  radius: 0.75
 --- !u!95 &6123722009812743178
 Animator:
   serializedVersion: 5

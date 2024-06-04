@@ -247,10 +247,15 @@ MonoBehaviour:
     m_Localized: Fight
     m_Metadata:
       m_Items: []
+  - m_Id: 7122991460786176
+    m_Localized: Advertising in {value}
+    m_Metadata:
+      m_Items:
+      - rid: 5461703773161259397
   references:
     version: 2
     RefIds:
     - rid: 5461703773161259397
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0020c213b9f913000020c276c91f1400002082ec66de17000020826a71de1700002082517ade17000020c24885de1700
+        m_Entries: 0020c213b9f913000020c276c91f1400002082ec66de17000020826a71de1700002082517ade17000020c24885de17000020c2af524e1900

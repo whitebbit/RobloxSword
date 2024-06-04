@@ -40,7 +40,7 @@ namespace _3._Scripts.UI.Panels
         {
             _fillAmount = 0.5f;
             _playerStrength = playerStrength;
-            _enemyStrength = enemyData.Strength;
+            _enemyStrength = enemyData.CurrentStrength;
             slider.value = _fillAmount;
 
             DoCounter();

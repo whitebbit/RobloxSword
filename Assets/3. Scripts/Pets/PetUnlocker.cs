@@ -45,21 +45,33 @@ namespace _3._Scripts.Pets
         {
             UpdatePrice();
         }
-        
 
+        private void OnEnable()
+        {
+            WalletManager.OnSecondCurrencyChange += WalletManagerOnOnSecondCurrencyChange; 
+        }
+        private void OnDisable()
+        {
+            WalletManager.OnSecondCurrencyChange -= WalletManagerOnOnSecondCurrencyChange; 
+        }
+        private void WalletManagerOnOnSecondCurrencyChange(int arg1, int arg2)
+        {
+            UpdatePrice();
+        }
+        
         private void UnlockRandom()
         {
-            if (!WalletManager.TrySpend(CurrencyType.Second, Price())) return;
 
             var list = data.Where(p => !GBGames.saves.petSaves.Unlocked(p.ID)).ToList();
             if (list.Count <= 0) return;
 
             var rand = GetRandomItem(list);
             if (rand == null) return;
+            
+            if (!WalletManager.TrySpend(CurrencyType.Second, Price())) return;
 
             GBGames.saves.petSaves.Unlock(rand.ID);
             GBGames.instance.Save();
-            WalletManager.SecondCurrency -= Price();
             UpdatePrice();
         }
 

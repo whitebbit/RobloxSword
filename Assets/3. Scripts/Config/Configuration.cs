@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using _3._Scripts.Characters;
 using _3._Scripts.Currency.Enums;
@@ -8,6 +9,7 @@ using _3._Scripts.Singleton;
 using _3._Scripts.Sounds.Scriptable;
 using _3._Scripts.Swords.Scriptable;
 using _3._Scripts.UI.Scriptable.Shop;
+using GBGamesPlugin;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -19,7 +21,6 @@ namespace _3._Scripts.Config
         [SerializeField] private List<CharacterItem> allCharacters = new();
         [SerializeField] private List<TrailItem> allTrails = new();
         [SerializeField] private List<PetData> allPets = new();
-
         [SerializeField] private List<SwordData> swordData = new();
 
 
@@ -28,5 +29,10 @@ namespace _3._Scripts.Config
         public IEnumerable<SwordData> SwordData => swordData;
         public IEnumerable<TrailItem> AllTrails => allTrails;
         public CurrencyData GetCurrency(CurrencyType type) => currencyData.FirstOrDefault(c => c.Type == type);
+
+        private void Start()
+        {
+            GBGames.GameReady();
+        }
     }
 }

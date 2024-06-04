@@ -4,6 +4,7 @@ using System.Linq;
 using _3._Scripts.Config;
 using _3._Scripts.Currency.Enums;
 using _3._Scripts.Currency.Scriptable;
+using _3._Scripts.Environment;
 using _3._Scripts.Wallet;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -18,6 +19,7 @@ namespace _3._Scripts.UI.Scriptable.Roulette
         [SerializeField] private CurrencyType type;
         [SerializeField] private int count;
 
+        private float Count => count * StageController.Instance.CurrentGiftsBoosterMultiplier;
         public override Sprite Icon()
         {
             return Configuration.Instance.GetCurrency(type)?.Icon;
@@ -25,7 +27,7 @@ namespace _3._Scripts.UI.Scriptable.Roulette
 
         public override string Title()
         {
-            return count.ToString();
+            return WalletManager.ConvertToWallet((decimal) Count);
         }
 
         public override void OnReward()
@@ -33,10 +35,10 @@ namespace _3._Scripts.UI.Scriptable.Roulette
             switch (type)
             {
                 case CurrencyType.First:
-                    WalletManager.FirstCurrency += count;
+                    WalletManager.FirstCurrency += Count;
                     break;
                 case CurrencyType.Second:
-                    WalletManager.SecondCurrency += count;
+                    WalletManager.SecondCurrency += Count;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

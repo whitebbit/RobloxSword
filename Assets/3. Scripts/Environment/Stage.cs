@@ -7,9 +7,12 @@ namespace _3._Scripts.Environment
     {
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private float petsBoosterMultiplier = 1;
+        [SerializeField] private float giftsBoosterMultiplier = 1;
         
         public Transform SpawnPoint => spawnPoint;
 
         public float PetsBoosterMultiplier => petsBoosterMultiplier;
+
+        public float GiftsBoosterMultiplier => giftsBoosterMultiplier;
     }
 }

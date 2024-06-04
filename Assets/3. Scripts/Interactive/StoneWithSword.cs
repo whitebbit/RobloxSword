@@ -43,7 +43,7 @@ namespace _3._Scripts.Interactive
         {
             InitializeSword();
             recommendationText.SetVariable("value",
-                WalletManager.ConvertToWallet((int) Mathf.Ceil(swordData.EnemyData.Strength * 1.5f)));
+                WalletManager.ConvertToWallet((int) Mathf.Ceil(swordData.EnemyData.CurrentStrength * 1.5f)));
         }
 
         private void Start()
@@ -143,7 +143,7 @@ namespace _3._Scripts.Interactive
             var currentSword = Configuration.Instance.SwordData
                 .FirstOrDefault(s => s.ID == GBGames.saves.swordSaves.current);
 
-            if (currentSword == null || swordData.EnemyData.Strength > currentSword.EnemyData.Strength)
+            if (currentSword == null || swordData.EnemyData.CurrentStrength > currentSword.EnemyData.CurrentStrength)
             {
                 GBGames.saves.swordSaves.Unlock(swordData.ID);
                 GBGames.saves.swordSaves.SetCurrent(swordData.ID);
