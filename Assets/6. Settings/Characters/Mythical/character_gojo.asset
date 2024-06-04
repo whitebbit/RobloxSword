@@ -15,7 +15,7 @@ MonoBehaviour:
   id: character_gojo
   icon: {fileID: 21300000, guid: 2ae54c64fad054843bd2cb09ded0be65, type: 3}
   rarity: 2
-  currencyType: 0
+  currencyType: 1
   price: 7500
   booster: 2.5
   prefab: {fileID: 3891135716263930877, guid: 51ccf8022eca81e439a438d64f79234e, type: 3}

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: character_freddy
   icon: {fileID: 21300000, guid: b34ffbbcbbca6424cb5d50768c0be818, type: 3}
   rarity: 3
-  currencyType: 0
+  currencyType: 1
   price: 25000
   booster: 3.5
   prefab: {fileID: 8626583878119005900, guid: 80585a0d9cbd7b1409ffd21376350d32, type: 3}

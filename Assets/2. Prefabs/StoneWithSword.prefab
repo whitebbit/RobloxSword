@@ -108,6 +108,7 @@ MonoBehaviour:
     position: {x: 0, y: 1.22, z: -0.01}
     rotation: {x: 72.3, y: -97.8, z: -104.65}
     scale: {x: 2.5, y: 2.5, z: 2.5}
+  information: {fileID: 2812366427307795506}
   swordName: {fileID: 8065912800242769103}
   recommendationText: {fileID: 3451812764172317112}
   complexityText: {fileID: 63687467166470056}

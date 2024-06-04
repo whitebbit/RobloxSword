@@ -227,6 +227,18 @@ MonoBehaviour:
     m_Key: sword_name_14
     m_Metadata:
       m_Items: []
+  - m_Id: 6882140188975104
+    m_Key: next_world
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6910647346536448
+    m_Key: training
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6911445191237632
+    m_Key: fight
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

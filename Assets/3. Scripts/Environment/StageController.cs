@@ -9,8 +9,9 @@ namespace _3._Scripts.Environment
     public class StageController : Singleton<StageController>
     {
         [SerializeField] private List<Stage> stages = new();
-        
+
         public Stage CurrentStage { get; private set; }
+        public float CurrentPetBoosterMultiplier => CurrentStage.PetsBoosterMultiplier;
 
         protected override void OnAwake()
         {

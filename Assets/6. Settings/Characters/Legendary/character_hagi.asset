@@ -15,7 +15,7 @@ MonoBehaviour:
   id: character_hagi
   icon: {fileID: 21300000, guid: f3f5ed2d2fe62b946ba38b47c4263cce, type: 3}
   rarity: 3
-  currencyType: 0
+  currencyType: 1
   price: 20000
   booster: 3.25
   prefab: {fileID: 2580571673941372801, guid: ce630f751d968444486d8889a4039481, type: 3}

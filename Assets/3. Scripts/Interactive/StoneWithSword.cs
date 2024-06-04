@@ -27,7 +27,10 @@ namespace _3._Scripts.Interactive
 
         [Tab("Sword")] [SerializeField] private SwordData swordData;
         [SerializeField] private SerializableTransform modelTransform;
-        [Tab("UI")] 
+        [Tab("UI")] [SerializeField]
+        private Transform information;
+
+        
         [SerializeField] private LocalizeStringEvent swordName;
         [SerializeField] private LocalizeStringEvent recommendationText;
         [SerializeField] private ComplexityText complexityText;
@@ -64,8 +67,8 @@ namespace _3._Scripts.Interactive
         {
             _currentSword = Instantiate(swordData.Sword, transform);
             _swordModel.gameObject.SetActive(false);
-            swordName.gameObject.SetActive(false);
-            recommendationText.gameObject.SetActive(false);
+            information.gameObject.SetActive(false);
+          
 
             InitializePlayer();
             InitializeUI();
@@ -117,8 +120,7 @@ namespace _3._Scripts.Interactive
             player.SwordHandler.CreateCurrentSword();
 
             _swordModel.gameObject.SetActive(true);
-            swordName.gameObject.SetActive(true);
-            recommendationText.gameObject.SetActive(true);
+            information.gameObject.SetActive(true);
 
             UIManager.Instance.GetPanel<MiniGamePanel>().Enabled = false;
             CameraController.Instance.SwapToMain();
@@ -164,8 +166,7 @@ namespace _3._Scripts.Interactive
             panel.Enabled = false;
 
             _swordModel.gameObject.SetActive(true);
-            swordName.gameObject.SetActive(true);
-            recommendationText.gameObject.SetActive(true);
+            information.gameObject.SetActive(true);
 
             CameraController.Instance.SwapToMain();
             EffectPanel.Instance.SpawnEffect(counterEffect).Initialize(CurrencyType.Second, swordData.EnemyData.Cups);

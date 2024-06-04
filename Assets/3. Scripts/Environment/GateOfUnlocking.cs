@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 namespace _3._Scripts.Environment
 {
-    public class GateOfUnlocking : MonoBehaviour, IInteractive
+    public class GateOfUnlocking : MonoBehaviour
     {
         [SerializeField] private SwordData swordToUnlock;
         [SerializeField] private int cupsToUnlock;
@@ -27,19 +27,17 @@ namespace _3._Scripts.Environment
         {
             return WalletManager.SecondCurrency >= cupsToUnlock && GBGames.saves.swordSaves.IsCurrent(swordToUnlock.ID);
         }
-
-        public void Interact()
+        
+        private void OnTriggerEnter(Collider other)
         {
+            if(!other.TryGetComponent(out Player.Player _))return;
+            
             if(!CanTeleportToNextStage()) return;
 
             GBGames.saves.stageID += 1;
             GBGames.instance.Save();
             
             SceneLoader.LoadScene(SceneManager.GetActiveScene().name);
-        }
-
-        public void StopInteract()
-        {
         }
     }
 }

@@ -15,7 +15,7 @@ namespace _3._Scripts.UI.Elements
         {
             var currency = Configuration.Instance.GetCurrency(data.CurrencyType);
             icon.sprite = currency.Icon;
-            counter.text = $"+{data.Booster}";
+            counter.text = $"+{data.Booster}%";
         }
     }
 }

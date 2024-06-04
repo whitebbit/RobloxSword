@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.5911418, g: 0.85594124, b: 0.94643563, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13431,7 +13431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 8, z: -10}
+  m_FollowOffset: {x: 0, y: 6, z: -9}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -16598,7 +16598,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 16
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -18708,7 +18708,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679659125}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28678977, y: 3e-45, z: -1e-45, w: 0.95799357}
+  m_LocalRotation: {x: 0.24498576, y: -0.000000016682048, z: 0.000000004215318, w: 0.9695267}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -24492,7 +24492,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739004659}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33100694, y: -0.000000016236429, z: 0.0000000056954317, w: 0.9436283}
+  m_LocalRotation: {x: 0.28978413, y: -0.000000016468094, z: 0.0000000049861377, w: 0.95709205}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -27431,7 +27431,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
+  m_fontSize: 47.65
   m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -28200,8 +28200,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 100
-  field of view: 60.000004
+  far clip plane: 5000
+  field of view: 50
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -28227,8 +28227,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000000269338, y: 0.9901504, z: -0.14000809, w: -0.000000019047837}
-  m_LocalPosition: {x: 8.18, y: 3.02, z: -13.799999}
+  m_LocalRotation: {x: 0.26740876, y: -0.000000028717022, z: 0.000000007969403, w: 0.96358323}
+  m_LocalPosition: {x: 0, y: 6, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28651,7 +28651,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 22.6
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -34832,7 +34832,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 22.6
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -36858,6 +36858,19 @@ MonoBehaviour:
   swordData:
   - {fileID: 11400000, guid: d169555b803b07a4eb1f4c034dd10e07, type: 2}
   - {fileID: 11400000, guid: 6234cf6cb27e51d42858713ffe12f285, type: 2}
+  - {fileID: 11400000, guid: 9f72bbd2c2d81ce4c943d07694f2ca14, type: 2}
+  - {fileID: 11400000, guid: 06e5eb3604afe704caf8d37a117b5820, type: 2}
+  - {fileID: 11400000, guid: 13698da847eb0024abecca3a4e9ac475, type: 2}
+  - {fileID: 11400000, guid: 832e1d7b08fdf2f4ba603731cbdbde5a, type: 2}
+  - {fileID: 11400000, guid: d4292ded4f0c0b84093bd14c8af7cae0, type: 2}
+  - {fileID: 11400000, guid: 40ebc0d30a311404e86fc29ab069637f, type: 2}
+  - {fileID: 11400000, guid: d6b75866779264b4db5d2516aeb6ddff, type: 2}
+  - {fileID: 11400000, guid: ff0000a4b6a7f5b49897cbb67be93013, type: 2}
+  - {fileID: 11400000, guid: c03c95551d763e6498a7374dbf7203de, type: 2}
+  - {fileID: 11400000, guid: da6245e2fbf08f64fbc07a535416fabe, type: 2}
+  - {fileID: 11400000, guid: 81fd5acd4f67e754cb49d6aed36ffdd9, type: 2}
+  - {fileID: 11400000, guid: f4688df97a9b8b04a989c52658a165f1, type: 2}
+  - {fileID: 11400000, guid: a52c7cbeae3e3664ca06c4595b6fc05f, type: 2}
 --- !u!114 &1298134341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37047,7 +37060,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 22.6
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -61070,7 +61083,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 19.2
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -66745,7 +66758,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 1
+    Value: 0.5
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.1
@@ -66801,10 +66814,10 @@ MonoBehaviour:
   m_Orbits:
   - m_Height: 8
     m_Radius: 10
-  - m_Height: 5
-    m_Radius: 8
+  - m_Height: 6
+    m_Radius: 9
   - m_Height: 0
-    m_Radius: 4
+    m_Radius: 8
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 739004660}
@@ -66819,7 +66832,7 @@ Transform:
   m_GameObject: {fileID: 1713140993}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: -10}
+  m_LocalPosition: {x: 0, y: 6, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -74355,7 +74368,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
+  m_fontSize: 20.6
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -74863,7 +74876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 8, z: -10}
+  m_FollowOffset: {x: 0, y: 6, z: -9}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -75740,7 +75753,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095013992}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30893394, y: -0, z: -0, w: 0.95108354}
+  m_LocalRotation: {x: 0.26740873, y: -1e-45, z: -0, w: 0.96358323}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -76067,7 +76080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 8, z: -10}
+  m_FollowOffset: {x: 0, y: 6, z: -9}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -84001,7 +84014,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 69.8
+  m_fontSize: 36.7
   m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 1

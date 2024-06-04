@@ -116,7 +116,7 @@ MonoBehaviour:
       m_Items:
       - rid: 5461703773161259397
   - m_Id: 6718458100326400
-    m_Localized: <color=##3BDA00>Starter</color>
+    m_Localized: <color=#3BDA00>Starter</color>
     m_Metadata:
       m_Items:
       - rid: 5461703773161259397
@@ -233,6 +233,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 6867760879243264
     m_Localized: Sword of Heavenly Power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6882140188975104
+    m_Localized: Next World
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6910647346536448
+    m_Localized: Practice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6911445191237632
+    m_Localized: Fight
     m_Metadata:
       m_Items: []
   references:

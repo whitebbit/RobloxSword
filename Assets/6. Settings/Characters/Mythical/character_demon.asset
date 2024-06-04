@@ -15,7 +15,7 @@ MonoBehaviour:
   id: character_demon
   icon: {fileID: 21300000, guid: 5f80286690d26884d8b12f9f504cfb55, type: 3}
   rarity: 2
-  currencyType: 0
+  currencyType: 1
   price: 4500
   booster: 2
   prefab: {fileID: 5183314557221967149, guid: d93fe2d42494bdd4e938059ea329d55a, type: 3}

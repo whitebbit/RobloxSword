@@ -15,7 +15,7 @@ MonoBehaviour:
   id: default_character
   icon: {fileID: 21300000, guid: 3fac62d9e0f557c4da458c65f6b0ed2a, type: 3}
   rarity: 1
-  currencyType: 0
+  currencyType: 1
   price: 0
   booster: 1
   prefab: {fileID: 9165197716890462911, guid: 43d171bd1afb74344b8bf7693602993c, type: 3}
