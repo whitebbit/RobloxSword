@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 200
-  priceMultiplier: 1.5
+  priceMultiplier: 3
   data:
   - {fileID: 11400000, guid: c59e5187913899b438fda6e819842381, type: 2}
   - {fileID: 11400000, guid: caee236e212e99345824f53f1d701443, type: 2}
