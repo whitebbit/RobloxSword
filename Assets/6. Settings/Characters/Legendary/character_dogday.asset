@@ -17,5 +17,5 @@ MonoBehaviour:
   rarity: 3
   currencyType: 1
   price: 2147483647
-  booster: 550
+  booster: 2250
   prefab: {fileID: 5034651712894487358, guid: 935b5cb9f4612a840b8e2368e0270c4b, type: 3}
