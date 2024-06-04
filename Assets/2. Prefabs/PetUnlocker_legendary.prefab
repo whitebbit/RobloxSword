@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 5044448991732601564}
   - component: {fileID: 3420908493130227424}
   m_Layer: 0
-  m_Name: PetUnlocker
+  m_Name: PetUnlocker_legendary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,31 +379,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f8874db91f47d694781278206d5a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  price: 300
+  priceMultiplier: 2
   data:
-  - {fileID: 11400000, guid: 2c847b973a8657a45a12e1da38420ae2, type: 2}
-  - {fileID: 11400000, guid: 0d8ef460bc595834f97972e8987cf8d0, type: 2}
-  - {fileID: 11400000, guid: c59e5187913899b438fda6e819842381, type: 2}
-  - {fileID: 11400000, guid: caee236e212e99345824f53f1d701443, type: 2}
+  - {fileID: 11400000, guid: 0914394f5ef0ca844b3a314800fabd6d, type: 2}
   - {fileID: 11400000, guid: d40b327033714ff48ab365b839113bff, type: 2}
-  - {fileID: 11400000, guid: 2c847b973a8657a45a12e1da38420ae2, type: 2}
-  - {fileID: 11400000, guid: 0d8ef460bc595834f97972e8987cf8d0, type: 2}
-  - {fileID: 11400000, guid: c59e5187913899b438fda6e819842381, type: 2}
-  - {fileID: 11400000, guid: caee236e212e99345824f53f1d701443, type: 2}
-  - {fileID: 11400000, guid: d40b327033714ff48ab365b839113bff, type: 2}
-  - {fileID: 11400000, guid: 86d141beaf651f04891da25baff18dce, type: 2}
-  - {fileID: 11400000, guid: 32fd285786fd1924e9dbfb7b5d88fa54, type: 2}
-  - {fileID: 11400000, guid: 926d4be845de874498a358139d84d349, type: 2}
-  - {fileID: 11400000, guid: 9f397c5d2b0a6024b8acb2daaf16d253, type: 2}
-  - {fileID: 11400000, guid: 757af53f17a80fc4fa3c83b333efdb75, type: 2}
-  - {fileID: 11400000, guid: ee9863013a711824ea98def41b342a9b, type: 2}
+  - {fileID: 11400000, guid: 45434893535882f4895399ef495b673f, type: 2}
   - {fileID: 11400000, guid: 133a37b8bc799f249a166667d9c90f82, type: 2}
-  - {fileID: 11400000, guid: 069fefbdece35c94e97df731c3e68f1b, type: 2}
-  - {fileID: 11400000, guid: 1311f0880d3d82044a7d59beff5d64e6, type: 2}
-  - {fileID: 11400000, guid: b7881a477fb40d24182cc7768010b5d6, type: 2}
-  - {fileID: 11400000, guid: 05df4d25eb6084d46a505df199630729, type: 2}
-  - {fileID: 11400000, guid: 359415ca9184ed246880fcef5aec24c0, type: 2}
-  - {fileID: 11400000, guid: 28bca832bcb3c4b4394c8a747e479b3d, type: 2}
+  - {fileID: 11400000, guid: 95ca6cfba8958b7479be1506d9071821, type: 2}
+  - {fileID: 11400000, guid: 822ae5809f65bef4dbfc1a19fa722e46, type: 2}
   - {fileID: 11400000, guid: 11720ffce3e388445b65bb200ed7fbf5, type: 2}
+  - {fileID: 11400000, guid: 5f615ce0e5ce99449b0e9abfbaf4396e, type: 2}
   canvas: {fileID: 4856627174417992141}
   priceText: {fileID: 9050746943220988810}
   currencyIcon: {fileID: 310693820305991151}
@@ -819,7 +805,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8706e78df5f9fc84aaba761f0bafea01, type: 2}
+  - {fileID: 2100000, guid: dd5c05363a24d4240bd5cf3e24401894, type: 2}
   - {fileID: 2100000, guid: 87a705eccfd62784899466196fa44634, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _3._Scripts.Config;
 using _3._Scripts.Currency.Enums;
+using _3._Scripts.Interactive.Interfaces;
 using _3._Scripts.Pets.Scriptables;
 using _3._Scripts.UI.Enums;
 using _3._Scripts.Wallet;
@@ -15,14 +16,25 @@ using Random = UnityEngine.Random;
 
 namespace _3._Scripts.Pets
 {
-    public class PetUnlocker : MonoBehaviour
+    public class PetUnlocker : MonoBehaviour, IInteractive
     {
-        [SerializeField] private List<PetData> data = new();
+        [Tab("Settings")]
         [SerializeField] private int price;
+        [SerializeField] private float priceMultiplier;
+        
+        [SerializeField] private List<PetData> data = new();
         
         [Tab("Components")] [SerializeField] private Canvas canvas;
         [SerializeField] private TMP_Text priceText;
         [SerializeField] private Image currencyIcon;
+
+
+        private float Price()
+        {
+            var pets = GBGames.saves.petSaves.unlocked.Count;
+            var multiplier = pets > 0 ? pets * priceMultiplier : 1;
+            return price * multiplier;
+        }
 
         private void Awake()
         {
@@ -37,7 +49,7 @@ namespace _3._Scripts.Pets
 
         private void UnlockRandom()
         {
-            if (!WalletManager.TrySpend(CurrencyType.Second, price)) return;
+            if (!WalletManager.TrySpend(CurrencyType.Second, Price())) return;
 
             var list = data.Where(p => !GBGames.saves.petSaves.Unlocked(p.ID)).ToList();
             if (list.Count <= 0) return;
@@ -47,7 +59,7 @@ namespace _3._Scripts.Pets
 
             GBGames.saves.petSaves.Unlock(rand.ID);
             GBGames.instance.Save();
-            WalletManager.SecondCurrency -= price;
+            WalletManager.SecondCurrency -= Price();
             UpdatePrice();
         }
 
@@ -91,12 +103,21 @@ namespace _3._Scripts.Pets
         {
             var image = Configuration.Instance.GetCurrency(CurrencyType.Second).Icon;
             currencyIcon.sprite = image;
-            priceText.text = price.ToString();
+            priceText.text = Price().ToString();
         }
 
         private void OnMouseDown()
         {
             UnlockRandom();
+        }
+
+        public void Interact()
+        {
+            UnlockRandom();
+        }
+
+        public void StopInteract()
+        {
         }
     }
 }
