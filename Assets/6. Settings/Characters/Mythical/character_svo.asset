@@ -16,6 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 64081c34c1fb6884f83b5123df813139, type: 3}
   rarity: 2
   currencyType: 1
-  price: 6500
-  booster: 2.3
+  price: 120000000
+  booster: 150
   prefab: {fileID: 4232134260723315008, guid: 978640282f77ee743b688ac9c71540d2, type: 3}
