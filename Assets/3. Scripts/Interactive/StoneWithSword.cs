@@ -68,8 +68,7 @@ namespace _3._Scripts.Interactive
             _currentSword = Instantiate(swordData.Sword, transform);
             _swordModel.gameObject.SetActive(false);
             information.gameObject.SetActive(false);
-          
-
+            
             InitializePlayer();
             InitializeUI();
 
@@ -114,7 +113,8 @@ namespace _3._Scripts.Interactive
 
 
             buttonsPanel.Enabled = true;
-            player.Animator.SetTrigger("LoseSword");
+            player.Animator.SetBool("WinSwordMiniGame", false);
+            player.Animator.SetTrigger("EndSwordMiniGame");
 
             player.SwordHandler.DestroyCurrentSword();
             player.SwordHandler.CreateCurrentSword();
@@ -130,7 +130,8 @@ namespace _3._Scripts.Interactive
         {
             var player = Player.Player.Instance;
 
-            player.Animator.SetTrigger("GetSword");
+            player.Animator.SetBool("WinSwordMiniGame", true);
+            player.Animator.SetTrigger("EndSwordMiniGame");
             player.SwordHandler.SetHandState(_currentSword);
             _currentSword = null;
 

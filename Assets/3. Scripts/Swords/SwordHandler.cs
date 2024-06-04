@@ -3,7 +3,6 @@ using _3._Scripts.Config;
 using DG.Tweening;
 using GBGamesPlugin;
 using UnityEngine;
-using VHierarchy.Libs;
 
 namespace _3._Scripts.Swords
 {

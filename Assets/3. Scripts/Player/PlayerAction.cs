@@ -46,6 +46,7 @@ namespace _3._Scripts.Player
         private void Update()
         {
             if (UIManager.Instance.Active) return;
+            if(!_animator.GetBool("IsGrounded")) return;
 
             if (_input.GetAction() || BoostersHandler.Instance.UseAutoClicker) DoAction();
             Cooldown();

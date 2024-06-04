@@ -27,9 +27,15 @@ namespace _3._Scripts.Player
         {
             if (_animator == null) return;
             _animator.SetBool(Animator.StringToHash(id), state);
-        } 
+        }
+
+        public bool GetBool(string id)
+        {
+            return _animator != null && _animator.GetBool(Animator.StringToHash(id));
+        }
+
         public void SetAvatar(Avatar avatar) => _animator.avatar = avatar;
-        
+
         public void SetSpeed(float speed)
         {
             if (_animator == null) return;
@@ -65,7 +71,7 @@ namespace _3._Scripts.Player
             if (_animator == null) return;
             _animator.SetTrigger(Animator.StringToHash(id));
         }
-        
+
         public void AnimationEvent(string id) => Event?.Invoke(id);
     }
 }

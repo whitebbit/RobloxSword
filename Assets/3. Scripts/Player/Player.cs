@@ -44,7 +44,7 @@ namespace _3._Scripts.Player
             InitializeCharacter();
             InitializeTrail();
             InitializePets();
-            InitializeSword();
+           // InitializeSword();
 
             Teleport(StageController.Instance.CurrentStage.SpawnPoint.position);
         }
@@ -77,7 +77,11 @@ namespace _3._Scripts.Player
         }
 
 
-        public void SetSwordPoint(SwordHandler handler) => SwordHandler = handler;
+        public void SetSwordPoint(SwordHandler handler)
+        {
+            SwordHandler = handler;
+            SwordHandler.CreateCurrentSword();
+        }
 
         public void Teleport(Vector3 position)
         {

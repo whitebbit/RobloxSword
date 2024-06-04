@@ -20,7 +20,6 @@ namespace _3._Scripts.Characters
             _animator = GetComponent<Animator>();
             Player.Player.Instance.Animator.SetAvatar(_animator.avatar);
             Player.Player.Instance.SetSwordPoint(swordHandler);
-
         }
         
     }
