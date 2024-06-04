@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1007393296678227615}
+  petsBoosterMultiplier: 1
 --- !u!1 &1176457761295159827
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,6 +2819,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8003632474168469812, guid: 20084845041a2454b9b1b709532858b2, type: 3}
+      propertyPath: cupsToUnlock
+      value: 20000000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3228,11 +3233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5327970562577664490, guid: c03f91369a9feff4084f400591a450f3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000019047837
+      value: -0.000000019047837
       objectReference: {fileID: 0}
     - target: {fileID: 5327970562577664490, guid: c03f91369a9feff4084f400591a450f3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000000269338
+      value: 0.00000000269338
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
