@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 6114455094181365872}
   petsBoosterMultiplier: 1
-  giftsBoosterMultiplier: 1000
+  giftsBoosterMultiplier: 1
 --- !u!1 &3862986666529203608
 GameObject:
   m_ObjectHideFlags: 0

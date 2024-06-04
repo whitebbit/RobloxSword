@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SecondCurrencyGift1
   m_EditorClassIdentifier: 
   type: 1
-  count: 1
+  count: 100
