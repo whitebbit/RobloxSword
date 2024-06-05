@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: sword_11
   m_EditorClassIdentifier: 
   id: sword_11
-  strengthBooster: 1.65
+  strengthBooster: 55000
   type: 1
   enemyData:
     <Strength>k__BackingField: 1.8e+12
