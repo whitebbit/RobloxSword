@@ -252,6 +252,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5461703773161259397
+  - m_Id: 7601025741627392
+    m_Localized: "Training \nstrength"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

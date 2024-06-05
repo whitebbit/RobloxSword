@@ -6,6 +6,7 @@ using Cinemachine;
 using DG.Tweening;
 using _3._Scripts.Config;
 using _3._Scripts.Currency.Enums;
+using _3._Scripts.Inputs;
 using _3._Scripts.Interactive.Interfaces;
 using _3._Scripts.Localization;
 using _3._Scripts.Swords.Scriptable;
@@ -43,7 +44,7 @@ namespace _3._Scripts.Interactive
         {
             InitializeSword();
             recommendationText.SetVariable("value",
-                WalletManager.ConvertToWallet((int) Mathf.Ceil(swordData.EnemyData.CurrentStrength * 1.5f)));
+                WalletManager.ConvertToWallet((decimal) Mathf.Ceil(swordData.EnemyData.CurrentStrength * 1.5f)));
         }
 
         private void Start()
@@ -124,6 +125,8 @@ namespace _3._Scripts.Interactive
 
             UIManager.Instance.GetPanel<MiniGamePanel>().Enabled = false;
             CameraController.Instance.SwapToMain();
+            InputHandler.Instance.SetInputState(true);
+
         }
 
         private void OnWin()
@@ -172,6 +175,7 @@ namespace _3._Scripts.Interactive
             CameraController.Instance.SwapToMain();
             EffectPanel.Instance.SpawnEffect(counterEffect).Initialize(CurrencyType.Second, swordData.EnemyData.Cups);
             WalletManager.SecondCurrency += swordData.EnemyData.Cups;
+            InputHandler.Instance.SetInputState(true);
 
             SetSwordAfterWin(player);
         }

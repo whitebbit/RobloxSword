@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using _3._Scripts.Ads;
 using _3._Scripts.Config;
 using _3._Scripts.Enemies;
+using _3._Scripts.Inputs;
 using _3._Scripts.Localization;
 using _3._Scripts.UI.Panels.Base;
 using _3._Scripts.Wallet;
@@ -42,17 +44,19 @@ namespace _3._Scripts.UI.Panels
             _playerStrength = playerStrength;
             _enemyStrength = enemyData.CurrentStrength;
             slider.value = _fillAmount;
-
+            InterstitialsTimer.Instance.Blocked = true;
             DoCounter();
             UpdatePlayerData();
             UpdateEnemyData(enemyData);
+            InputHandler.Instance.SetInputState(false);
         }
 
 
         private void Update()
         {
             if (!_started) return;
-
+            if(InterstitialsTimer.Instance.Active) return;
+            
             HandleInput();
             UpdateFillAmount();
             slider.value = _fillAmount;
@@ -100,6 +104,8 @@ namespace _3._Scripts.UI.Panels
         {
             gameEndEvent?.Invoke();
             _started = false;
+            InterstitialsTimer.Instance.Blocked = false;
+
             OnLose = null;
             OnWin = null;
         }
@@ -107,7 +113,7 @@ namespace _3._Scripts.UI.Panels
         private void UpdateEnemyData(EnemyData enemyData)
         {
             enemyIcon.sprite = enemyData.Icon;
-            enemyStrengthText.text = WalletManager.ConvertToWallet((int) Mathf.Ceil(_enemyStrength));
+            enemyStrengthText.text = WalletManager.ConvertToWallet((decimal) _enemyStrength);
             enemyName.SetReference(enemyData.LocalizeID);
         }
 
@@ -116,7 +122,7 @@ namespace _3._Scripts.UI.Panels
             playerIcon.sprite = Configuration.Instance.AllCharacters
                 .FirstOrDefault(c => c.ID == GBGames.saves.characterSaves.current)
                 ?.Icon;
-            playerStrengthText.text = WalletManager.ConvertToWallet((int) _playerStrength);
+            playerStrengthText.text = WalletManager.ConvertToWallet((decimal) _playerStrength);
         }
 
         private float GetPlayerFillRate() => FillRate / 4 * (_playerStrength / (_playerStrength + _enemyStrength));

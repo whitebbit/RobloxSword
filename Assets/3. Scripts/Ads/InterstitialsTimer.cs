@@ -1,14 +1,17 @@
 using System.Collections;
 using _3._Scripts.Config;
+using _3._Scripts.Singleton;
 using _3._Scripts.UI;
+using _3._Scripts.UI.Panels;
 using GBGamesPlugin;
 using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.Localization.SmartFormat.PersistentVariables;
+using UnityEngine.Serialization;
 
 namespace _3._Scripts.Ads
 {
-    public class InterstitialsTimer : MonoBehaviour
+    public class InterstitialsTimer : Singleton<InterstitialsTimer>
     {
         [SerializeField] private GameObject secondsPanelObject;
         [SerializeField] private LocalizeStringEvent localizedText;
@@ -18,7 +21,8 @@ namespace _3._Scripts.Ads
         private Coroutine _checkTimerCoroutine;
         private Coroutine _adShowCoroutine;
         private Coroutine _backupTimerCoroutine;
-
+        public bool Active { get; private set; }
+        public bool Blocked { get; set; }
         private void Start()
         {
             secondsPanelObject.SetActive(false);
@@ -68,7 +72,7 @@ namespace _3._Scripts.Ads
         private void ResetTimer()
         {
             _adCountdown = 0;
-            UIManager.Instance.Active = false;
+            Active = false;
             secondsPanelObject.SetActive(false);
             PauseController.Pause(false);
         }
@@ -86,17 +90,19 @@ namespace _3._Scripts.Ads
         {
             yield return new WaitForSeconds(RemoteConfiguration.InterstitialTimer);
 
-            while (GBGames.NowAdsShow && UIManager.Instance.Active)
-            {
-                yield return new WaitForSeconds(1);
-            }
-
+            yield return new WaitUntil(CanShow);
+            
             _adCountdown = 3;
             secondsPanelObject.SetActive(true);
-            UIManager.Instance.Active = true;
+            Active = true;
             _adShowCoroutine = StartCoroutine(AdShowCoroutine());
         }
 
+        private bool CanShow()
+        {
+            return !GBGames.NowAdsShow && !Blocked;
+        }
+        
         private IEnumerator AdShowCoroutine()
         {
             while (_adCountdown > 0)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _3._Scripts.Ads;
 using _3._Scripts.Boosters;
 using _3._Scripts.Config;
 using _3._Scripts.Detectors;
@@ -45,8 +46,8 @@ namespace _3._Scripts.Player
 
         private void Update()
         {
-            if (UIManager.Instance.Active) return;
-            if(!_animator.GetBool("IsGrounded")) return;
+            if (UIManager.Instance.Active || InterstitialsTimer.Instance.Active) return;
+            //if(!_animator.GetBool("IsGrounded")) return;
 
             if (_input.GetAction() || BoostersHandler.Instance.UseAutoClicker) DoAction();
             Cooldown();

@@ -11,10 +11,12 @@ namespace _3._Scripts.Boosters
         [SerializeField] private BoosterButton autoClickerButton;
         [SerializeField] private BoosterButton incomeButton;
         [SerializeField] private BoosterButton currencyButton;
+        [SerializeField] private BoosterStateButton speedButton;
 
         public bool UseAutoClicker { get; private set; }
         public bool X2Income { get; private set; }
         public bool X2Currency { get; private set; }
+        public bool SpeedBoosted { get; private set; }
 
         private void Start()
         {
@@ -24,6 +26,9 @@ namespace _3._Scripts.Boosters
             incomeButton.onDeactivateBooster += () => X2Income = false;
             currencyButton.onActivateBooster += () => X2Currency = true;
             currencyButton.onDeactivateBooster += () => X2Currency = false;
+            
+           // speedButton.onActivateBooster +=  () => SpeedBoosted = true;
+           // speedButton.onDeactivateBooster +=  () => SpeedBoosted = false;
         }
     }
 }

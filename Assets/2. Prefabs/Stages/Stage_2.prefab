@@ -1617,6 +1617,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6704171258339724451, guid: 2e1cef64efcf2bb4fb2f3fdeb14f2ecc, type: 3}
   m_PrefabInstance: {fileID: 1745607656964022064}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5850995582044115776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5263385875560287344, guid: 2e1cef64efcf2bb4fb2f3fdeb14f2ecc, type: 3}
+  m_PrefabInstance: {fileID: 1745607656964022064}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929618b4499340568b1b47febc8db19c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1803288410328499593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2292,6 +2303,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018632196180708063, guid: fc6feb83b58f28d48b86a24fe78c64f9, type: 3}
+      propertyPath: arena
+      value: 
+      objectReference: {fileID: 5850995582044115776}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2840,6 +2855,10 @@ PrefabInstance:
     - target: {fileID: 419907834982327945, guid: 20084845041a2454b9b1b709532858b2, type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 419907834982327945, guid: 20084845041a2454b9b1b709532858b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1864431194995284789, guid: 20084845041a2454b9b1b709532858b2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3556,6 +3575,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6875343405827166880}
     m_Modifications:
+    - target: {fileID: 2150198230026593920, guid: 9c329af5dfd6fff46b56490d33a352d3, type: 3}
+      propertyPath: arena
+      value: 
+      objectReference: {fileID: 5850995582044115776}
     - target: {fileID: 5055307938810227906, guid: 9c329af5dfd6fff46b56490d33a352d3, type: 3}
       propertyPath: m_Name
       value: SylneishyyFBX@T-Pose (1)
@@ -3868,6 +3891,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3654182541058323762, guid: 950de19ef8ee0f040941d72709936f29, type: 3}
+      propertyPath: arena
+      value: 
+      objectReference: {fileID: 5850995582044115776}
     - target: {fileID: 6531404397083493033, guid: 950de19ef8ee0f040941d72709936f29, type: 3}
       propertyPath: m_Name
       value: GutZFBX@T-Pose

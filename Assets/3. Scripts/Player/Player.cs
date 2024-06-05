@@ -72,8 +72,7 @@ namespace _3._Scripts.Player
             var strength = (baseClick * swordStrength);
             
             var booster = pets.Sum(p => p.Booster) + character.Booster;
-            
-            return  (strength + (strength * booster / 100)) * x2;
+            return  (strength + strength * (booster / 100)) * x2;
         }
 
 

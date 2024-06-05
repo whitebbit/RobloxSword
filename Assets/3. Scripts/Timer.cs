@@ -1,4 +1,5 @@
 using System;
+using GBGamesPlugin;
 using TMPro;
 using UnityEngine;
 
@@ -8,13 +9,33 @@ namespace _3._Scripts
     public class Timer : MonoBehaviour
     {
         private float _durationInSeconds;
-        private DateTime _startTime;
+        private float _startTime;
         private bool _isRunning;
+        private bool _isPaused;
+        private TMP_Text _timerText;
 
         public event Action OnTimerStart;
         public event Action OnTimerEnd;
-        private TMP_Text _timerText;
-        public bool TimerStopped { get; set; }
+
+        private bool _timerStopped;
+        public bool TimerStopped
+        {
+            get => _timerStopped;
+            set
+            {
+                if (_timerStopped == value) return;
+                _timerStopped = value;
+                if (_timerStopped)
+                {
+                    StopTimer();
+                }
+                else
+                {
+                    StartTimer(_durationInSeconds - (Time.time - _startTime));
+                }
+            }
+        }
+
         private void Awake()
         {
             _timerText = GetComponent<TMP_Text>();
@@ -22,30 +43,39 @@ namespace _3._Scripts
 
         private void Update()
         {
-            if (!_isRunning) return;
+            if (!_isRunning || _isPaused) return;
 
-            var remainingTime = _startTime.AddSeconds(_durationInSeconds) - DateTime.Now;
-            _timerText.text = GetRemainingTimeFormatted();
+            var remainingTime = Mathf.Max(0, _durationInSeconds - (Time.time - _startTime));
+            _timerText.text = FormatTime(remainingTime);
 
-            if (remainingTime > TimeSpan.Zero) return;
-            _timerText.text = GetRemainingTimeFormatted();
-            _isRunning = false;
-            OnTimerEnd?.Invoke();
+            if (remainingTime <= 0)
+            {
+                _isRunning = false;
+                OnTimerEnd?.Invoke();
+            }
         }
 
         public void StartTimer(float timeInSeconds)
         {
             OnTimerStart?.Invoke();
             _durationInSeconds = timeInSeconds;
-            _startTime = DateTime.Now;
+            _startTime = Time.time;
             _isRunning = true;
+            _isPaused = false;
+            _timerStopped = false;
         }
 
         public bool TimerEnd()
         {
-            return _startTime.AddSeconds(_durationInSeconds) - DateTime.Now <= TimeSpan.Zero;
+            return Time.time - _startTime >= _durationInSeconds;
         }
-        public TimeSpan TimeToEnd() => _startTime.AddSeconds(_durationInSeconds) - DateTime.Now;
+
+        public TimeSpan TimeToEnd()
+        {
+            float remainingTime = Mathf.Max(0, _durationInSeconds - (Time.time - _startTime));
+            return TimeSpan.FromSeconds(remainingTime);
+        }
+
         public void StopTimer()
         {
             _isRunning = false;
@@ -53,16 +83,37 @@ namespace _3._Scripts
 
         public void ResetTimer()
         {
-            _startTime = DateTime.Now;
+            _startTime = Time.time;
             _isRunning = false;
+            _timerStopped = true;
         }
 
-        private string GetRemainingTimeFormatted()
+        private string FormatTime(float timeInSeconds)
         {
-            var remainingTime = _startTime.AddSeconds(_durationInSeconds) - DateTime.Now;
-            if (remainingTime <= TimeSpan.Zero)
-                remainingTime = TimeSpan.Zero;
-            return $"{remainingTime.Hours:D2}:{remainingTime.Minutes:D2}:{remainingTime.Seconds:D2}";
+            var ts = TimeSpan.FromSeconds(timeInSeconds);
+            return $"{ts.Hours:D2}:{ts.Minutes:D2}:{ts.Seconds:D2}";
+        }
+
+        private void OnEnable()
+        {
+            GBGames.GameVisibleStateCallback += OnGameVisibleStateCallback;
+            GBGames.GameHiddenStateCallback += OnGameHiddenStateCallback;
+        }
+
+        private void OnDisable()
+        {
+            GBGames.GameVisibleStateCallback -= OnGameVisibleStateCallback;
+            GBGames.GameHiddenStateCallback -= OnGameHiddenStateCallback;
+        }
+
+        private void OnGameHiddenStateCallback()
+        {
+            _isPaused = true;
+        }
+
+        private void OnGameVisibleStateCallback()
+        {
+            _isPaused = false;
         }
     }
 }

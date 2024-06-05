@@ -11,7 +11,8 @@ namespace _3._Scripts.Inputs
         [SerializeField] private FixedTouchField touchField;
         [SerializeField] private FixedButton jumpButton;
         [SerializeField] private FixedButton actionButton;
-        
+
+
         public Vector2 GetMovementAxis()
         {
             return joystick.Direction.normalized;

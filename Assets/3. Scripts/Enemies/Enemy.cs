@@ -3,6 +3,7 @@ using _3._Scripts.Interactive;
 using _3._Scripts.Interactive.Interfaces;
 using _3._Scripts.Localization;
 using _3._Scripts.Player;
+using _3._Scripts.Wallet;
 using UnityEngine;
 using UnityEngine.Localization.Components;
 
@@ -38,7 +39,7 @@ namespace _3._Scripts.Enemies
             _animator.SetGrounded(true);
             _animator.SetSpeed(0);
             
-            text.SetVariable("value", data.CurrentStrength.ToString());
+            text.SetVariable("value", WalletManager.ConvertToWallet((decimal) data.CurrentStrength));
             nameText.SetReference(data.LocalizeID);
         }
 

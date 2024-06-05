@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using _3._Scripts.Currency.Enums;
 using _3._Scripts.Enemies;
+using _3._Scripts.Inputs;
 using _3._Scripts.Interactive.Interfaces;
 using _3._Scripts.Player;
 using _3._Scripts.UI;
@@ -57,6 +58,7 @@ namespace _3._Scripts.Interactive
             SetupEnemy();
             InitializeUI();
             CameraController.Instance.SwapTo(cam);
+
         }
 
         private void TeleportPlayer()
@@ -127,6 +129,7 @@ namespace _3._Scripts.Interactive
             _buttonsPanel.Enabled = true;
 
             CameraController.Instance.SwapToMain();
+            InputHandler.Instance.SetInputState(true);
         }
     }
 }

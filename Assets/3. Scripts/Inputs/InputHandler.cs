@@ -35,6 +35,24 @@ namespace _3._Scripts.Inputs
                 }
             }
         }
+
+        public void SetInputState(bool state)
+        {
+            switch (GBGames.deviceType)
+            {
+                case DeviceType.Mobile:
+                    mobileInput.gameObject.SetActive(state);
+                    break;
+                case DeviceType.Tablet:
+                    break;
+                case DeviceType.Desktop:
+                    break;
+                case DeviceType.TV:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
         
     }
 }

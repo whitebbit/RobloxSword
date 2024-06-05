@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5185419401145290310}
   - component: {fileID: 218052941686545610}
   - component: {fileID: 3930664265943446522}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 4856627174417992141}
   - component: {fileID: 9107533081275808415}
   - component: {fileID: 1955046360924529926}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 4463540594904059332}
   - component: {fileID: 5044448991732601564}
   - component: {fileID: 3420908493130227424}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PetUnlocker_legendary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 407493509211515101}
   - component: {fileID: 5373924849996305876}
   - component: {fileID: 9050746943220988810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 3845779655297230578}
   - component: {fileID: 2416539300606909856}
   - component: {fileID: 310693820305991151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 6973698359524722621}
   - component: {fileID: 6913723030536438733}
   - component: {fileID: 7131814552820561793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 8876701149539430341}
   - component: {fileID: 4024913825466745699}
   - component: {fileID: 7606369013613886385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Yoshieggs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,9 +837,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8876701149539430341}
     m_Modifications:
+    - target: {fileID: 117726, guid: ef5a7269b1cf9dc4ca6e2bb959e8ec9b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 149666, guid: ef5a7269b1cf9dc4ca6e2bb959e8ec9b, type: 3}
       propertyPath: m_Name
       value: PowerOrbYellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 149666, guid: ef5a7269b1cf9dc4ca6e2bb959e8ec9b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 188392, guid: ef5a7269b1cf9dc4ca6e2bb959e8ec9b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400704, guid: ef5a7269b1cf9dc4ca6e2bb959e8ec9b, type: 3}
       propertyPath: m_LocalScale.x

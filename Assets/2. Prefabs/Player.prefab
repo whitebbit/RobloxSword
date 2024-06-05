@@ -329,7 +329,7 @@ MonoBehaviour:
   gizmos:
     type: 1
     color: {r: 1, g: 0, b: 0, a: 0.5019608}
-  radius: 0.75
+  radius: 1.25
 --- !u!95 &6123722009812743178
 Animator:
   serializedVersion: 5

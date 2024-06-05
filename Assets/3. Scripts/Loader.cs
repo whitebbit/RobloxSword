@@ -1,7 +1,12 @@
+using System;
 using System.Collections;
 using GBGamesPlugin;
+using InstantGamesBridge;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Localization.Settings;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,70 +15,77 @@ namespace _3._Scripts
     public class Loader : MonoBehaviour
     {
         [SerializeField] private Slider progressBar;
+        [SerializeField] private AssetReference levelScene;
+
 
         private void OnEnable()
         {
-            GBGames.SaveLoadedCallback += LoadGame;
+            GBGames.SaveLoadedCallback += GBGamesOnSaveLoadedCallback;
         }
 
         private void OnDisable()
         {
-            GBGames.SaveLoadedCallback -= LoadGame;
+            GBGames.SaveLoadedCallback -= GBGamesOnSaveLoadedCallback;
         }
 
-        private void LoadGame()
+        private void Start()
         {
-            StartCoroutine(InitializeLocalizationAndLoadScene());
+            StartCoroutine(LoadGame());
         }
 
-        private IEnumerator InitializeLocalizationAndLoadScene()
+        private void GBGamesOnSaveLoadedCallback()
+        {
+            _saveLoaded = true;
+            StartCoroutine(InitializeLocalization());
+        }
+
+        private IEnumerator InitializeLocalization()
         {
             yield return LocalizationSettings.InitializationOperation;
-            SetLanguage(GBGames.language);
-
-            // Проверка свободной памяти перед загрузкой
-            if (!IsMemorySufficient())
-            {
-                Debug.Log("Insufficient memory, attempting to free up memory");
-                yield return FreeUpMemory();
-            }
-
-            yield return LoadGameSceneAsync();
-        }
-
-        private void SetLanguage(string languageCode)
-        {
-            var locale = LocalizationSettings.AvailableLocales.Locales.Find(l => l.Identifier.Code == languageCode);
+            
+            var locale = LocalizationSettings.AvailableLocales.Locales.Find(l => l.Identifier.Code == GBGames.language);
+            
             if (locale != null)
             {
                 LocalizationSettings.SelectedLocale = locale;
             }
+            
+            _localizationLoaded = true;
         }
 
+        private IEnumerator LoadGame()
+        {
+            if (!IsMemorySufficient()) yield return FreeUpMemory();
+
+            yield return LoadGameSceneAsync();
+        }
+
+        private bool _saveLoaded;
+        private bool _localizationLoaded;
         private IEnumerator LoadGameSceneAsync()
         {
-            var asyncOperation = SceneManager.LoadSceneAsync(1);
+            var asyncOperation = SceneManager.LoadSceneAsync("MainScene");
             asyncOperation.allowSceneActivation = false;
-
             while (!asyncOperation.isDone)
             {
-               // progressBar.value = Mathf.Clamp01(asyncOperation.progress / 0.9f);
+                var progress = Mathf.Clamp01(asyncOperation.progress / 0.9f); 
+                progressBar.value = progress;
 
-                if (asyncOperation.progress >= 0.9f)
+                if (asyncOperation.progress >= 0.9f && _saveLoaded && _localizationLoaded)
                 {
                     asyncOperation.allowSceneActivation = true;
                 }
 
-                yield return null;
+                yield return null; 
             }
         }
 
         private bool IsMemorySufficient()
         {
             // Проверьте текущее использование памяти
-            var totalMemory = System.GC.GetTotalMemory(false);
+            var totalMemory = GC.GetTotalMemory(false);
             var allocatedMemory = UnityEngine.Profiling.Profiler.GetTotalAllocatedMemoryLong();
-            
+
             // Установите порог, после которого будет попытка освободить память (например, 500MB)
             const long memoryThreshold = 500 * 1024 * 1024; // 500 MB
 

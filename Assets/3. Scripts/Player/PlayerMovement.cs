@@ -1,4 +1,5 @@
 ﻿using System;
+using _3._Scripts.Ads;
 using _3._Scripts.Boosters;
 using _3._Scripts.Inputs;
 using _3._Scripts.Inputs.Interfaces;
@@ -46,7 +47,7 @@ namespace _3._Scripts.Player
         private void Update()
         {
             ResetVelocity();
-            if (UIManager.Instance.Active)
+            if (UIManager.Instance.Active || InterstitialsTimer.Instance.Active)
             {
                 _animator.SetSpeed(0);
                 _input.CursorState();
