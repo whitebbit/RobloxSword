@@ -1,4 +1,5 @@
-﻿using _3._Scripts.Currency.Enums;
+﻿using _3._Scripts.Config;
+using _3._Scripts.Currency.Enums;
 using _3._Scripts.Environment;
 using _3._Scripts.UI.Enums;
 using UnityEngine;
@@ -20,7 +21,7 @@ namespace _3._Scripts.Pets.Scriptables
         public Rarity Rarity => rarity;
         public Pet Prefab => prefab;
         public CurrencyType CurrencyType => currencyType;
-        public float Booster => booster * StageController.Instance.CurrentPetBoosterMultiplier;
+        public float Booster => (booster + RemoteConfiguration.PetBoosterAdditionalPercent)* StageController.Instance.CurrentPetBoosterMultiplier;
         public string ID => id;
 
         public static void Activate()

@@ -338,8 +338,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 52.54}
-  m_SizeDelta: {x: 410.5026, y: 393.92}
+  m_AnchoredPosition: {x: 0, y: 64.94863}
+  m_SizeDelta: {x: 410.5026, y: 369.1027}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6720021883815746198
 MonoBehaviour:
@@ -885,7 +885,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 57.5}
-  m_SizeDelta: {x: 410.75525, y: 115}
+  m_SizeDelta: {x: 410.7552, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2641951680825950228
 CanvasRenderer:
@@ -1400,7 +1400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -69, y: 207.5}
+  m_AnchoredPosition: {x: -88.099976, y: 207.5}
   m_SizeDelta: {x: 47.0343, y: 51.9853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4747096462302068061
@@ -1668,7 +1668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 284f99482071f47839549747513b612b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4594cf46cc344df2bc8dbbdfd0847c0, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1692,15 +1692,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rarityTables:
   - rarity: 1
-    table: {fileID: 21300000, guid: 91d37967864564f818aaf9326fcf0302, type: 3}
+    table: {fileID: 21300000, guid: a4594cf46cc344df2bc8dbbdfd0847c0, type: 3}
     mainColor: {r: 0.043137256, g: 0.45490196, b: 0.80784315, a: 0.5019608}
     additionalColor: {r: 0.4745098, g: 0.91764706, b: 1, a: 0.5019608}
   - rarity: 2
-    table: {fileID: 21300000, guid: 072fc1e433b92438e915c6c10bfd2994, type: 3}
+    table: {fileID: 21300000, guid: 44a9a5484ba3c4cc895dc425ccaea164, type: 3}
     mainColor: {r: 0.6156863, g: 0.043137256, b: 0.80784315, a: 0.5019608}
     additionalColor: {r: 1, g: 0.4745098, b: 0.8392157, a: 0.5019608}
   - rarity: 3
-    table: {fileID: 21300000, guid: 284f99482071f47839549747513b612b, type: 3}
+    table: {fileID: 21300000, guid: 28554fc966eb749e587c11db562e7eeb, type: 3}
     mainColor: {r: 0.80784315, g: 0.5803922, b: 0.043137256, a: 0.5019608}
     additionalColor: {r: 1, g: 0.9607843, b: 0.4745098, a: 0.5019608}
   title: {fileID: 1798569882498430996}
@@ -2092,7 +2092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 57.099976, y: 457.5}
+  m_AnchoredPosition: {x: 38, y: 457.5}
   m_SizeDelta: {x: 193.83, y: 51.985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4129799052456394963

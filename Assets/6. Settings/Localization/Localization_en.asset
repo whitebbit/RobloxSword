@@ -253,13 +253,26 @@ MonoBehaviour:
       m_Items:
       - rid: 5461703773161259397
   - m_Id: 7601025741627392
-    m_Localized: "Training \nstrength"
+    m_Localized: 'Received
+
+      strength X2'
     m_Metadata:
       m_Items: []
+  - m_Id: 8134057095471104
+    m_Localized: 'Current
+
+      strength X2'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8135499197849600
+    m_Localized: '{time} min.'
+    m_Metadata:
+      m_Items:
+      - rid: 5461703773161259397
   references:
     version: 2
     RefIds:
     - rid: 5461703773161259397
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0020c213b9f913000020c276c91f1400002082ec66de17000020826a71de1700002082517ade17000020c24885de17000020c2af524e1900
+        m_Entries: 0020c213b9f913000020c276c91f1400002082ec66de17000020826a71de1700002082517ade17000020c24885de17000020c2af524e19000020c28331e71c00

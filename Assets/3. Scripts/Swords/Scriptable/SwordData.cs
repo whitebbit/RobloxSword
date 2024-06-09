@@ -1,4 +1,5 @@
-﻿using _3._Scripts.Enemies;
+﻿using _3._Scripts.Config;
+using _3._Scripts.Enemies;
 using UnityEngine;
 using UnityEngine.Serialization;
 using VInspector;
@@ -28,7 +29,7 @@ namespace _3._Scripts.Swords.Scriptable
 
         public string ID => id;
 
-        public float StrengthBooster => strengthBooster;
+        public float StrengthBooster => strengthBooster + RemoteConfiguration.SwordAdditionalBooster;
         public EnemyData EnemyData => enemyData;
 
         public ComplexityType Type => type;

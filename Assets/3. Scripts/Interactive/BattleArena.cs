@@ -119,8 +119,8 @@ namespace _3._Scripts.Interactive
 
             if (playerWon)
             {
-                WalletManager.SecondCurrency += _enemy.Data.Cups;
-                EffectPanel.Instance.SpawnEffect(counterEffect).Initialize(CurrencyType.Second, _enemy.Data.Cups);
+                WalletManager.SecondCurrency += _enemy.Data.CurrentCups;
+                EffectPanel.Instance.SpawnEffect(counterEffect).Initialize(CurrencyType.Second, _enemy.Data.CurrentCups);
             }
 
             _enemy.TeleportToStart();

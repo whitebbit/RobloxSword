@@ -5,6 +5,7 @@ namespace GBGamesPlugin
     public static class PauseController
     {
         private static bool _audioPause;
+        private static float _audioVolume;
         private static float _timeScale = 1;
         private static CursorLockMode _cursorLockMode = CursorLockMode.None;
         private static bool _cursorVisible = true;
@@ -17,8 +18,9 @@ namespace GBGamesPlugin
                 _timeScale = Time.timeScale;
                 _cursorLockMode = Cursor.lockState;
                 _cursorVisible = Cursor.visible;
-
-                AudioListener.pause = true;
+                _audioVolume = AudioListener.volume;
+                
+                AudioListener.volume = 0;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = false;
                 Time.timeScale = 0;
@@ -26,7 +28,7 @@ namespace GBGamesPlugin
             else
             {
                 Time.timeScale = _timeScale;
-                AudioListener.pause = _audioPause;
+                AudioListener.volume = _audioVolume;
                 Cursor.lockState = _cursorLockMode;
                 Cursor.visible = _cursorVisible;
             }

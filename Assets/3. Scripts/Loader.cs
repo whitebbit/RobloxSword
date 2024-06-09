@@ -15,7 +15,6 @@ namespace _3._Scripts
     public class Loader : MonoBehaviour
     {
         [SerializeField] private Slider progressBar;
-        [SerializeField] private AssetReference levelScene;
 
 
         private void OnEnable()
@@ -28,14 +27,9 @@ namespace _3._Scripts
             GBGames.SaveLoadedCallback -= GBGamesOnSaveLoadedCallback;
         }
 
-        private void Start()
-        {
-            StartCoroutine(LoadGame());
-        }
 
         private void GBGamesOnSaveLoadedCallback()
         {
-            _saveLoaded = true;
             StartCoroutine(InitializeLocalization());
         }
 
@@ -50,18 +44,12 @@ namespace _3._Scripts
                 LocalizationSettings.SelectedLocale = locale;
             }
             
-            _localizationLoaded = true;
-        }
-
-        private IEnumerator LoadGame()
-        {
             if (!IsMemorySufficient()) yield return FreeUpMemory();
 
             yield return LoadGameSceneAsync();
+            
         }
 
-        private bool _saveLoaded;
-        private bool _localizationLoaded;
         private IEnumerator LoadGameSceneAsync()
         {
             var asyncOperation = SceneManager.LoadSceneAsync("MainScene");
@@ -71,7 +59,7 @@ namespace _3._Scripts
                 var progress = Mathf.Clamp01(asyncOperation.progress / 0.9f); 
                 progressBar.value = progress;
 
-                if (asyncOperation.progress >= 0.9f && _saveLoaded && _localizationLoaded)
+                if (asyncOperation.progress >= 0.9f)
                 {
                     asyncOperation.allowSceneActivation = true;
                 }

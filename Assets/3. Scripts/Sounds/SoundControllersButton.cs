@@ -28,7 +28,7 @@ namespace _3._Scripts.Sounds
             GBGames.saves.sound = state;
             AudioListener.pause = !state;
             image.sprite = state ? on : off;
-            GBGames.instance.Save();
+            //GBGames.instance.Save();
         }
     }
 }

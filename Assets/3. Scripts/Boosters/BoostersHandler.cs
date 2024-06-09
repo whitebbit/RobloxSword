@@ -13,6 +13,8 @@ namespace _3._Scripts.Boosters
         [SerializeField] private BoosterButton currencyButton;
         [SerializeField] private BoosterStateButton speedButton;
 
+        [Space]
+        [SerializeField] private Transform currencyTextBooster;
         public bool UseAutoClicker { get; private set; }
         public bool X2Income { get; private set; }
         public bool X2Currency { get; private set; }
@@ -24,11 +26,22 @@ namespace _3._Scripts.Boosters
             autoClickerButton.onDeactivateBooster += () => UseAutoClicker = false;
             incomeButton.onActivateBooster += () => X2Income = true;
             incomeButton.onDeactivateBooster += () => X2Income = false;
-            currencyButton.onActivateBooster += () => X2Currency = true;
-            currencyButton.onDeactivateBooster += () => X2Currency = false;
             
-           // speedButton.onActivateBooster +=  () => SpeedBoosted = true;
+            currencyButton.onActivateBooster += () =>
+            {
+                X2Currency = true;
+                currencyTextBooster.gameObject.SetActive(true);
+            };
+            currencyButton.onDeactivateBooster += () =>
+            {
+                X2Currency = false;
+                currencyTextBooster.gameObject.SetActive(false);
+            };
+            
+            //speedButton.onActivateBooster +=  () => SpeedBoosted = true;
            // speedButton.onDeactivateBooster +=  () => SpeedBoosted = false;
+            
+            currencyTextBooster.gameObject.SetActive(false);
         }
     }
 }

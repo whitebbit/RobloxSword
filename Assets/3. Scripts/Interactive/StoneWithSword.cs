@@ -173,8 +173,8 @@ namespace _3._Scripts.Interactive
             information.gameObject.SetActive(true);
 
             CameraController.Instance.SwapToMain();
-            EffectPanel.Instance.SpawnEffect(counterEffect).Initialize(CurrencyType.Second, swordData.EnemyData.Cups);
-            WalletManager.SecondCurrency += swordData.EnemyData.Cups;
+            EffectPanel.Instance.SpawnEffect(counterEffect).Initialize(CurrencyType.Second, swordData.EnemyData.CurrentCups);
+            WalletManager.SecondCurrency += swordData.EnemyData.CurrentCups;
             InputHandler.Instance.SetInputState(true);
 
             SetSwordAfterWin(player);

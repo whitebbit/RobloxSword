@@ -14,6 +14,7 @@ namespace _3._Scripts.Enemies
         [field:SerializeField] public Sprite Icon { get; private set; }
         [field:SerializeField] public string LocalizeID { get; private set; }
 
-        public float CurrentStrength => Strength * RemoteConfiguration.EnemyStrength;
+        public float CurrentStrength => Strength * RemoteConfiguration.EnemyStrengthMultiplier;
+        public float CurrentCups => Cups * RemoteConfiguration.EnemyCupsMultiplier;
     }
 }

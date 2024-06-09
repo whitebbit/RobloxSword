@@ -247,6 +247,14 @@ MonoBehaviour:
     m_Key: training_force
     m_Metadata:
       m_Items: []
+  - m_Id: 8134057095471104
+    m_Key: current_currency
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8135499197849600
+    m_Key: ad_timer
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

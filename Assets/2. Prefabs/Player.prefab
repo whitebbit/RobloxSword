@@ -280,6 +280,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 25aeeddaec483194d8716b322a15cb95, type: 2}
   - {fileID: 7400000, guid: af74b7b29150844419f8402b001f6e9e, type: 2}
   detector: {fileID: 4185699559551035625}
+  effect: {fileID: 1435494698352475531, guid: 469f7092be63a304f82faf0c38812156, type: 3}
 --- !u!114 &2444070233650219842
 MonoBehaviour:
   m_ObjectHideFlags: 0

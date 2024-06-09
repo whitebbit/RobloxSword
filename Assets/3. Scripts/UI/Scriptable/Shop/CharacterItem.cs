@@ -1,4 +1,6 @@
 ﻿using _3._Scripts.Characters;
+using _3._Scripts.Config;
+using _3._Scripts.Wallet;
 using UnityEngine;
 using VInspector;
 
@@ -13,10 +15,10 @@ namespace _3._Scripts.UI.Scriptable.Shop
 
         public Character Prefab => prefab;
 
-        public float Booster => booster;
+        public float Booster => booster + RemoteConfiguration.CharacterBoosterAdditionalPercent;
         public override string Title()
         {
-            return $"+{booster}%";
+            return $"+{WalletManager.ConvertToWallet((decimal) booster)}%";
         }
     }
 }
