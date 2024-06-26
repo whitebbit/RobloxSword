@@ -1,13 +1,19 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using InstantGamesBridge;
 using InstantGamesBridge.Modules.Device;
 using InstantGamesBridge.Modules.Leaderboard;
+using UnityEngine;
 
 namespace GBGamesPlugin
 {
     public partial class GBGames
     {
+        public static List<LeaderboardEntry> leaderboardEntries = new();
+        private static readonly Dictionary<string, float> LeaderboardsScore = new();
+
         /// <summary>
         /// Поддерживает ли платформа лидерборды.
         /// </summary>
@@ -43,8 +49,23 @@ namespace GBGamesPlugin
         /// <summary>
         /// Записать очки игрока.
         /// </summary>
-        public static void SetLeaderboardScore(Action onSetLeaderboardScoreSuccess = null,
-            Action onSetLeaderboardScoreFailed = null, Dictionary<string, object> options = default)
+        public static void SetLeaderboardScore(string name, float score,
+            Action onSetLeaderboardScoreSuccess = null,
+            Action onSetLeaderboardScoreFailed = null)
+        {
+            if (!leaderboardIsSetScoreSupported) return;
+
+            SetLeaderboardScore(new Dictionary<string, object>
+            {
+                {"leaderboardName", name}, {"score", score}
+            }, onSetLeaderboardScoreSuccess, onSetLeaderboardScoreFailed);
+
+            LeaderboardsScore[name] = score;
+        }
+
+        private static void SetLeaderboardScore(Dictionary<string, object> options = default,
+            Action onSetLeaderboardScoreSuccess = null,
+            Action onSetLeaderboardScoreFailed = null)
         {
             if (!leaderboardIsSetScoreSupported) return;
             Bridge.leaderboard.SetScore(options, (success) =>
@@ -54,6 +75,7 @@ namespace GBGamesPlugin
             });
         }
 
+
         /// <summary>
         /// Поддерживается ли чтение очков игрока.
         /// </summary>
@@ -62,13 +84,32 @@ namespace GBGamesPlugin
         /// <summary>
         /// Получение очков игрока.
         /// </summary>
-        public static int GetLeaderboardScore(Action onGetLeaderboardScoreSuccess = null,
-            Action onGetLeaderboardScoreFailed = null, Dictionary<string, object> options = default)
+        public static float GetLeaderboardScore(string name)
         {
-            if (!leaderboardIsGetScoreSupported) return 0;
+            return !leaderboardIsGetScoreSupported ? 0 : LeaderboardsScore.GetValueOrDefault(name, 0);
+        }
 
+        public void LoadLeaderboardScore(string leaderboardName,
+            Action onGetLeaderboardScoreSuccess = null,
+            Action onGetLeaderboardScoreFailed = null)
+        {
+            if (!leaderboardIsGetScoreSupported) return;
+
+            var options = new Dictionary<string, object>
+            {
+                {"leaderboardName", leaderboardName}
+            };
+
+            StartCoroutine(FetchLeaderboardScore(options, onGetLeaderboardScoreSuccess, onGetLeaderboardScoreFailed));
+        }
+
+        private IEnumerator FetchLeaderboardScore(
+            Dictionary<string, object> options,
+            Action onGetLeaderboardScoreSuccess = null,
+            Action onGetLeaderboardScoreFailed = null)
+        {
+            var loader = 0;
             var score = 0;
-
             Bridge.leaderboard.GetScore(options, (success, s) =>
             {
                 if (success)
@@ -77,9 +118,13 @@ namespace GBGamesPlugin
                     onGetLeaderboardScoreSuccess?.Invoke();
                 }
                 else onGetLeaderboardScoreFailed?.Invoke();
+
+                loader += 1;
             });
 
-            return score;
+            yield return new WaitUntil(() => loader >= 1);
+
+            LeaderboardsScore.Add(options["leaderboardName"].ToString(), score);
         }
 
         /// <summary>
@@ -90,15 +135,32 @@ namespace GBGamesPlugin
         /// <summary>
         /// Получение записей из таблицы;
         /// </summary>
-        public static List<LeaderboardEntry> GetLeaderboardEntries(Action onGetLeaderboardEntriesSuccess = null,
-            Action onGetLeaderboardEntriesFailed = null,
-            Dictionary<string, object> options = default)
+        public IEnumerator LoadLeaderboardEntries(string leaderboardName, bool includeUser = true,
+            int quantityAround = 10, int quantityTop = 10,
+            Action onGetLeaderboardEntriesSuccess = null,
+            Action onGetLeaderboardEntriesFailed = null)
         {
-            if (!leaderboardIsGetEntriesSupported) return new List<LeaderboardEntry>();
+            if (!leaderboardIsGetEntriesSupported) yield break;
+            var options = new Dictionary<string, object>
+            {
+                {"leaderboardName", leaderboardName},
+                {"includeUser", includeUser},
+                {"quantityAround", quantityAround},
+                {"quantityTop", quantityTop},
+            };
 
+            yield return StartCoroutine(FetchLeaderboardEntries(options, onGetLeaderboardEntriesSuccess,
+                onGetLeaderboardEntriesFailed));
+        }
+
+        private IEnumerator FetchLeaderboardEntries(
+            Dictionary<string, object> options,
+            Action onGetLeaderboardEntriesSuccess = null,
+            Action onGetLeaderboardEntriesFailed = null)
+        {
+            var loader = 0;
             var entries = new List<LeaderboardEntry>();
-
-            Bridge.leaderboard.GetEntries(options,(success, e) =>
+            Bridge.leaderboard.GetEntries(options, (success, e) =>
             {
                 if (success)
                 {
@@ -106,9 +168,13 @@ namespace GBGamesPlugin
                     onGetLeaderboardEntriesSuccess?.Invoke();
                 }
                 else onGetLeaderboardEntriesFailed?.Invoke();
+
+                loader += 1;
             });
 
-            return entries;
+            yield return new WaitUntil(() => loader >= 1);
+
+            leaderboardEntries = entries;
         }
     }
 }

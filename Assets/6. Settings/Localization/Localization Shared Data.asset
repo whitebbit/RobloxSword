@@ -232,7 +232,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6910647346536448
-    m_Key: training
+    m_Key: leaderboard
     m_Metadata:
       m_Items: []
   - m_Id: 6911445191237632
@@ -268,7 +268,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 15006676172283904
-    m_Key: tutorial_tap_training
+    m_Key: player_level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15036755946381312
+    m_Key: tap_tutorail
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -240,7 +240,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6910647346536448
-    m_Localized: Practice
+    m_Localized: Leaderboard
     m_Metadata:
       m_Items: []
   - m_Id: 6911445191237632
@@ -282,6 +282,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 15006676172283904
+    m_Localized: '{value} lvl.'
+    m_Metadata:
+      m_Items:
+      - rid: 5461703773161259397
+  - m_Id: 15036755946381312
     m_Localized: Tap to increase your strength.
     m_Metadata:
       m_Items: []
@@ -291,4 +296,4 @@ MonoBehaviour:
     - rid: 5461703773161259397
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0020c213b9f913000020c276c91f1400002082ec66de17000020826a71de1700002082517ade17000020c24885de17000020c2af524e19000020c28331e71c00
+        m_Entries: 0020c213b9f913000020c276c91f1400002082ec66de17000020826a71de1700002082517ade17000020c24885de17000020c2af524e19000020c28331e71c00002082127e503500
