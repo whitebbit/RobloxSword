@@ -46,7 +46,7 @@ namespace _3._Scripts.Player
             InitializePets();
            // InitializeSword();
 
-            Teleport(StageController.Instance.CurrentStage.SpawnPoint.position);
+            //Teleport(StageController.Instance.CurrentStage.SpawnPoint.position);
         }
 
         public float Strength()

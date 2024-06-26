@@ -1,6 +1,7 @@
 using _3._Scripts.UI.Interfaces;
 using _3._Scripts.UI.Panels;
 using DG.Tweening;
+using GBGamesPlugin;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,6 +23,10 @@ namespace _3._Scripts.UI
                 {
                     if (!(this is ButtonsPanel))
                         UIManager.Instance.Active = true;
+                    
+                    if (!(this is MiniGamePanel) && !(this is ButtonsPanel))
+                        GBGames.GameplayStopped();
+                    
                     EventSystem.current.SetSelectedGameObject(null);
                     
                     Open();
@@ -30,6 +35,9 @@ namespace _3._Scripts.UI
                 {
                     if (!(this is ButtonsPanel))
                         UIManager.Instance.Active = false;
+                    
+                    if (!(this is MiniGamePanel) && !(this is ButtonsPanel))
+                        GBGames.GameplayStarted();
                     
                     EventSystem.current.SetSelectedGameObject(null);
                     

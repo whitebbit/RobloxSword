@@ -173,8 +173,8 @@ mergeInto(LibraryManager.library, {
         window.hideBanner()
     },
 
-    InstantGamesBridgeShowInterstitial: function(options) {
-        window.showInterstitial(UTF8ToString(options))
+    InstantGamesBridgeShowInterstitial: function() {
+        window.showInterstitial()
     },
 
     InstantGamesBridgeShowRewarded: function() {
@@ -250,8 +250,8 @@ mergeInto(LibraryManager.library, {
         window.share(UTF8ToString(options))
     },
 
-    InstantGamesBridgeInviteFriends: function() {
-        window.inviteFriends()
+    InstantGamesBridgeInviteFriends: function(options) {
+        window.inviteFriends(UTF8ToString(options))
     },
 
     InstantGamesBridgeJoinCommunity: function(options) {
@@ -288,14 +288,6 @@ mergeInto(LibraryManager.library, {
         var bufferSize = lengthBytesUTF8(isLeaderboardNativePopupSupported) + 1
         var buffer = _malloc(bufferSize)
         stringToUTF8(isLeaderboardNativePopupSupported, buffer, bufferSize)
-        return buffer
-    },
-
-    InstantGamesBridgeIsLeaderboardMultipleBoardsSupported: function() {
-        var isLeaderboardMultipleBoardsSupported = window.getIsLeaderboardMultipleBoardsSupported()
-        var bufferSize = lengthBytesUTF8(isLeaderboardMultipleBoardsSupported) + 1
-        var buffer = _malloc(bufferSize)
-        stringToUTF8(isLeaderboardMultipleBoardsSupported, buffer, bufferSize)
         return buffer
     },
 
@@ -347,12 +339,12 @@ mergeInto(LibraryManager.library, {
         return buffer
     },
 
-    InstantGamesBridgePaymentsPurchase: function(id) {
-        window.paymentsPurchase(UTF8ToString(id))
+    InstantGamesBridgePaymentsPurchase: function(options) {
+        window.paymentsPurchase(UTF8ToString(options))
     },
 
-    InstantGamesBridgePaymentsConsumePurchase: function(token) {
-        window.paymentsConsumePurchase(UTF8ToString(token))
+    InstantGamesBridgePaymentsConsumePurchase: function(options) {
+        window.paymentsConsumePurchase(UTF8ToString(options))
     },
     
     InstantGamesBridgePaymentsGetPurchases: function() {

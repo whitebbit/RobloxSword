@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using _3._Scripts.Ads;
 using _3._Scripts.Config;
 using _3._Scripts.Enemies;
 using _3._Scripts.Inputs;
 using _3._Scripts.Localization;
+using _3._Scripts.UI.Extensions;
 using _3._Scripts.UI.Panels.Base;
 using _3._Scripts.Wallet;
 using DG.Tweening;
@@ -20,7 +22,9 @@ namespace _3._Scripts.UI.Panels
     public class MiniGamePanel : SimplePanel
     {
         [SerializeField] private Slider slider;
-        [SerializeField] private TMP_Text timer;
+        [SerializeField] private CountdownTimer timer;
+        [SerializeField] private List<Transform> deactivateObjects = new();
+
         [Tab("Player")] [SerializeField] private Image playerIcon;
         [SerializeField] private TMP_Text playerStrengthText;
         [Tab("Enemy")] [SerializeField] private Image enemyIcon;
@@ -36,7 +40,7 @@ namespace _3._Scripts.UI.Panels
         private float _fillAmount = 0.5f;
 
         private const float FillRate = 0.5f;
-        private const float WinThreshold = 0.95f;
+        private const float WinThreshold = 0.9f;
 
         public void StartGame(float playerStrength, EnemyData enemyData)
         {
@@ -44,19 +48,40 @@ namespace _3._Scripts.UI.Panels
             _playerStrength = playerStrength;
             _enemyStrength = enemyData.CurrentStrength;
             slider.value = _fillAmount;
-            InterstitialsTimer.Instance.Blocked = true;
             DoCounter();
             UpdatePlayerData();
             UpdateEnemyData(enemyData);
-            InputHandler.Instance.SetInputState(false);
         }
 
+        protected override void OnOpen()
+        {
+            InterstitialsTimer.Instance.Blocked = true;
+            base.OnOpen();
+
+            foreach (var obj in deactivateObjects)
+            {
+                obj.gameObject.SetActive(false);
+            }
+            InputHandler.Instance.SetState(false);
+        }
+
+        protected override void OnClose()
+        {
+            InterstitialsTimer.Instance.Blocked = false;
+            base.OnClose();
+            
+            foreach (var obj in deactivateObjects)
+            {
+                obj.gameObject.SetActive(true);
+            }
+            InputHandler.Instance.SetState(true);
+        }
 
         private void Update()
         {
             if (!_started) return;
-            if(InterstitialsTimer.Instance.Active) return;
-            
+            if (InterstitialsTimer.Instance.Active) return;
+
             HandleInput();
             UpdateFillAmount();
             slider.value = _fillAmount;
@@ -65,12 +90,7 @@ namespace _3._Scripts.UI.Panels
 
         private void DoCounter()
         {
-            timer.DOCounter(3, 1, 3).OnComplete(() => _started = true);
-            timer.DOFade(1, 0f).OnComplete(() =>
-            {
-                timer.DOFade(0, 0.5f).SetLoops(4, LoopType.Yoyo)
-                    .OnComplete(() => timer.DOFade(0, 0.5f));
-            });
+            timer.StartCountdown(() => _started = true);
         }
 
         private void HandleInput()

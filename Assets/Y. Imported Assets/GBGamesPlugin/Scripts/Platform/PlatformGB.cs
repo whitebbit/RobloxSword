@@ -10,7 +10,7 @@ namespace GBGamesPlugin
         /// <summary>
         /// Возвращает идентификатор платформы, на которой в данный момент запущена игра. Возможные значения: VK, Yandex, CrazyGames, AbsoluteGames, GameDistribution, VKPlay, Mock.
         /// </summary>
-        public static PlatformId platform => Bridge.platform.id;
+        public static string platform => Bridge.platform.id;
 
         /// <summary>
         /// Если платформа предоставляет данные об языке пользователя — то это будет язык, который установлен у пользователя на платформе. Если не предоставляет — это будет язык браузера пользователя. Формат: ISO 639-1. Пример: ru, en.
@@ -31,18 +31,19 @@ namespace GBGamesPlugin
             {
                 return platform switch
                 {
-                    PlatformId.VK => "com",
-                    PlatformId.Yandex => Bridge.platform.tld,
-                    PlatformId.CrazyGames => "com",
-                    PlatformId.AbsoluteGames => "com",
-                    PlatformId.GameDistribution => "com",
-                    PlatformId.VKPlay => "ru",
-                    PlatformId.Mock => "ru",
+                    "playgama" => "com",
+                    "vk" => "com",
+                    "yandex" => Bridge.platform.tld,
+                    "crazy_games" => "com",
+                    "absolute_games" => "com",
+                    "game_distribution" => "com",
+                    "vk_play" => "ru",
+                    "mock" => "ru",
                     _ => ""
                 };
             }
         }
-        
+
         /// <summary>
         /// Игра загрузилась, все загрузочные экраны прошли, игрок может взаимодействовать с игрой. Yandex
         /// </summary>

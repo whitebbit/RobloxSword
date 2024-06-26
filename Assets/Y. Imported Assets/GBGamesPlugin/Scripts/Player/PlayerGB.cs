@@ -46,10 +46,10 @@ namespace GBGamesPlugin
         /// Авторизация игрока.
         /// </summary>
         public static void AuthorizePlayer(Action onAuthorizePlayerSuccess = null,
-            Action onAuthorizePlayerFailed = null)
+            Action onAuthorizePlayerFailed = null, Dictionary<string, object> options = default)
         {
             Message("Authorize Player");
-            Bridge.player.Authorize((success) =>
+            Bridge.player.Authorize(options, (success) =>
             {
                 if (success)
                 {
@@ -61,7 +61,7 @@ namespace GBGamesPlugin
                     onAuthorizePlayerFailed?.Invoke();
                     Message("Authorize Player Failed", LoggerState.error);
                 }
-            }, new AuthorizeYandexOptions(instance.settings.yandexScopes));
+            });
         }
     }
 }

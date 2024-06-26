@@ -8,6 +8,7 @@ namespace GBGamesPlugin
 {
     public partial class GBGames
     {
+        
         public static bool NowAdsShow =>
             interstitialState == InterstitialState.Opened || rewardedState == RewardedState.Opened;
         
@@ -95,9 +96,6 @@ namespace GBGamesPlugin
         /// </summary>
         public static void ShowInterstitial()
         {
-#if UNITY_EDITOR
-            if (!Bridge.advertisement.CanShowInterstitial()) return;
-#endif
             Bridge.advertisement.ShowInterstitial();
         }
 
@@ -116,9 +114,6 @@ namespace GBGamesPlugin
                     break;
                 case InterstitialState.Opened:
                     InterstitialOpenedCallback?.Invoke();
-#if UNITY_EDITOR
-                    FullAdInEditor();
-#endif
                     Message("Interstitial state - opened");
                     if (_inGame)
                         PauseController.Pause(true);
@@ -152,7 +147,7 @@ namespace GBGamesPlugin
         /// </summary>
         public static void ShowRewarded(Action onRewarded)
         {
-            RewardedCallback += onRewarded;
+            RewardedCallback = onRewarded;
             Bridge.advertisement.ShowRewarded();
         }
 
@@ -173,9 +168,6 @@ namespace GBGamesPlugin
                     break;
                 case RewardedState.Opened:
                     RewardedOpenedCallback?.Invoke();
-#if UNITY_EDITOR
-                    FullAdInEditor();
-#endif
                     Message("Rewarded state - opened");
                     PauseController.Pause(true);
                     break;
@@ -198,15 +190,6 @@ namespace GBGamesPlugin
         }
 
         #endregion
-
-#if UNITY_EDITOR
-        private static void FullAdInEditor()
-        {
-            var obj = new GameObject {name = "TestFullAd"};
-            DontDestroyOnLoad(obj);
-            var call = obj.AddComponent(typeof(CallingAnEvent)) as CallingAnEvent;
-            call?.StartCoroutine(call.CallingAd(0.5f));
-        }
-#endif
+        
     }
 }

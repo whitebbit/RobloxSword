@@ -17,7 +17,7 @@ MonoBehaviour:
   enableBannerAutomatically: 1
   useCloudSaves: 1
   useCloudSaveInterval: 1
-  cloudSaveInterval: 1
+  cloudSaveInterval: 2
   autoSaveByInterval: 1
   saveInterval: 1
   saveOnChangeVisibilityState: 1

@@ -13,10 +13,10 @@ namespace _3._Scripts.Sounds
         protected override void OnAwake()
         {
             base.OnAwake();
-            if (Instance != null && Instance != this)
+            /*if (Instance != null && Instance != this)
                 Destroy(gameObject);
 
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);*/
             _source = GetComponent<AudioSource>();
         }
 

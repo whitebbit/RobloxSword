@@ -104,7 +104,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5664449675534336
-    m_Key: gate_required
+    m_Key: teleport_price
     m_Metadata:
       m_Items: []
   - m_Id: 6362204521766912
@@ -253,6 +253,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8135499197849600
     m_Key: ad_timer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11770450447310848
+    m_Key: teleport_return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11787104921198592
+    m_Key: use_input
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15003125568118784
+    m_Key: tutorial_sword_step
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15006676172283904
+    m_Key: tutorial_tap_training
     m_Metadata:
       m_Items: []
   m_Metadata:

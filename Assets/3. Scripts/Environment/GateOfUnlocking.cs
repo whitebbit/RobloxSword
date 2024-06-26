@@ -13,7 +13,6 @@ namespace _3._Scripts.Environment
 {
     public class GateOfUnlocking : MonoBehaviour
     {
-
         [SerializeField] private SwordData swordToUnlock;
         [SerializeField] private int cupsToUnlock;
         [Space] [SerializeField] private LocalizeStringEvent text;
@@ -23,7 +22,6 @@ namespace _3._Scripts.Environment
             var swordName = await swordToUnlock.EnemyData.LocalizeID.GetTranslate();
             text.SetVariable("cups", cupsToUnlock);
             text.SetVariable("sword", swordName);
-            
         }
 
         private bool CanTeleportToNextStage()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1864431194995284789}
   - component: {fileID: 5989343279646165942}
   - component: {fileID: 8003632474168469812}
+  - component: {fileID: 651054305389022884}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -72,6 +73,22 @@ MonoBehaviour:
   swordToUnlock: {fileID: 11400000, guid: 13698da847eb0024abecca3a4e9ac475, type: 2}
   cupsToUnlock: 100
   text: {fileID: 7097396909338521961}
+--- !u!114 &651054305389022884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419907834982327945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762b610f040340b8947f0517dfa16e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  text: {fileID: 7097396909338521961}
+  swordToUnlock: {fileID: 0}
+  cupsToUnlock: 0
 --- !u!1 &2981134602175786925
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +725,7 @@ MonoBehaviour:
   m_fontSizeMin: 1
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -769,10 +786,10 @@ MonoBehaviour:
     m_LocalVariables:
     - name: cups
       variable:
-        rid: 5461703773161259627
+        rid: 3203987172265558036
     - name: sword
       variable:
-        rid: 5461703773161259628
+        rid: 3203987172265558037
   m_FormatArguments: []
   m_UpdateString:
     m_PersistentCalls:
@@ -792,11 +809,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 5461703773161259627
-      type: {class: IntVariable, ns: UnityEngine.Localization.SmartFormat.PersistentVariables, asm: Unity.Localization}
+    - rid: 3203987172265558036
+      type: {class: StringVariable, ns: UnityEngine.Localization.SmartFormat.PersistentVariables, asm: Unity.Localization}
       data:
-        m_Value: 0
-    - rid: 5461703773161259628
+        m_Value: 100
+    - rid: 3203987172265558037
       type: {class: StringVariable, ns: UnityEngine.Localization.SmartFormat.PersistentVariables, asm: Unity.Localization}
       data:
         m_Value: 

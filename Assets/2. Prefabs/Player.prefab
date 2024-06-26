@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 3339503246896848536}
   - component: {fileID: 4185699559551035625}
   - component: {fileID: 6123722009812743178}
+  - component: {fileID: 7522709873394829464}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -274,12 +275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0dd6cb2d1dd4612aeed07f3d8ecb0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCooldownTime: 0.65
   actionAnimations:
   - {fileID: 7400000, guid: 47bb4af6ef4c92e49ba0c2699c6459a4, type: 2}
   - {fileID: 7400000, guid: 25aeeddaec483194d8716b322a15cb95, type: 2}
   - {fileID: 7400000, guid: af74b7b29150844419f8402b001f6e9e, type: 2}
-  detector: {fileID: 4185699559551035625}
   effect: {fileID: 1435494698352475531, guid: 469f7092be63a304f82faf0c38812156, type: 3}
 --- !u!114 &2444070233650219842
 MonoBehaviour:
@@ -325,12 +324,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   startPoint: {fileID: 9115963613469310830}
-  offset: {x: 0, y: 0.25, z: 1}
+  offset: {x: 0, y: 0, z: 0}
   considerObstacles: 0
   gizmos:
     type: 1
     color: {r: 1, g: 0, b: 0, a: 0.5019608}
-  radius: 1.25
+  radius: 3
 --- !u!95 &6123722009812743178
 Animator:
   serializedVersion: 5
@@ -352,3 +351,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7522709873394829464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7962200750916725592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54052355bc234f1c8adbf422458022fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detector: {fileID: 4185699559551035625}

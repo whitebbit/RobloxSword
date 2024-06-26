@@ -23,10 +23,10 @@ namespace _3._Scripts.UI
         protected override void OnAwake()
         {
             base.OnAwake();
-            if (Instance != null && Instance != this)
+            /*if (Instance != null && Instance != this)
                 Destroy(gameObject);
 
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);*/
 
             InitializeScreens();
             InitializeWidgets();

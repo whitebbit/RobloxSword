@@ -18,6 +18,11 @@ namespace _3._Scripts.Interactive
     {
         [SerializeField] private CurrencyCounterEffect effect;
 
+        public void StartInteract()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Interact()
         {
             DoIncome();

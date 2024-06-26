@@ -21,17 +21,18 @@ namespace GBGamesPlugin
         /// <summary>
         /// Показать нативный popup.
         /// </summary>
-        public static void ShowLeaderboardNativePopup(Action onShowNativePopupSuccess = null,
+        public static void ShowLeaderboardNativePopup(
+            Action onShowNativePopupSuccess = null,
             Action onShowNativePopupFailed = null,
-            params ShowNativePopupPlatformDependedOptions[] platformDependedOptions)
+            Dictionary<string, object> options = default)
         {
             if (!leaderboardIsNativePopupSupported) return;
 
-            Bridge.leaderboard.ShowNativePopup((success) =>
+            Bridge.leaderboard.ShowNativePopup(options, (success) =>
             {
                 if (success) onShowNativePopupSuccess?.Invoke();
                 else onShowNativePopupFailed?.Invoke();
-            }, platformDependedOptions);
+            });
         }
 
         /// <summary>
@@ -43,14 +44,14 @@ namespace GBGamesPlugin
         /// Записать очки игрока.
         /// </summary>
         public static void SetLeaderboardScore(Action onSetLeaderboardScoreSuccess = null,
-            Action onSetLeaderboardScoreFailed = null, params SetScorePlatformDependedOptions[] platformDependedOptions)
+            Action onSetLeaderboardScoreFailed = null, Dictionary<string, object> options = default)
         {
             if (!leaderboardIsSetScoreSupported) return;
-            Bridge.leaderboard.SetScore((success) =>
+            Bridge.leaderboard.SetScore(options, (success) =>
             {
                 if (success) onSetLeaderboardScoreSuccess?.Invoke();
                 else onSetLeaderboardScoreFailed?.Invoke();
-            }, platformDependedOptions);
+            });
         }
 
         /// <summary>
@@ -62,13 +63,13 @@ namespace GBGamesPlugin
         /// Получение очков игрока.
         /// </summary>
         public static int GetLeaderboardScore(Action onGetLeaderboardScoreSuccess = null,
-            Action onGetLeaderboardScoreFailed = null, params GetScorePlatformDependedOptions[] platformDependedOptions)
+            Action onGetLeaderboardScoreFailed = null, Dictionary<string, object> options = default)
         {
             if (!leaderboardIsGetScoreSupported) return 0;
 
             var score = 0;
 
-            Bridge.leaderboard.GetScore((success, s) =>
+            Bridge.leaderboard.GetScore(options, (success, s) =>
             {
                 if (success)
                 {
@@ -76,7 +77,7 @@ namespace GBGamesPlugin
                     onGetLeaderboardScoreSuccess?.Invoke();
                 }
                 else onGetLeaderboardScoreFailed?.Invoke();
-            }, platformDependedOptions);
+            });
 
             return score;
         }
@@ -85,19 +86,19 @@ namespace GBGamesPlugin
         /// Поддерживается ли чтение полной таблицы.
         /// </summary>
         public static bool leaderboardIsGetEntriesSupported => Bridge.leaderboard.isGetEntriesSupported;
-        
+
         /// <summary>
         /// Получение записей из таблицы;
         /// </summary>
         public static List<LeaderboardEntry> GetLeaderboardEntries(Action onGetLeaderboardEntriesSuccess = null,
             Action onGetLeaderboardEntriesFailed = null,
-            params GetEntriesPlatformDependedOptions[] platformDependedOptions)
+            Dictionary<string, object> options = default)
         {
             if (!leaderboardIsGetEntriesSupported) return new List<LeaderboardEntry>();
 
             var entries = new List<LeaderboardEntry>();
 
-            Bridge.leaderboard.GetEntries((success, e) =>
+            Bridge.leaderboard.GetEntries(options,(success, e) =>
             {
                 if (success)
                 {
@@ -105,7 +106,7 @@ namespace GBGamesPlugin
                     onGetLeaderboardEntriesSuccess?.Invoke();
                 }
                 else onGetLeaderboardEntriesFailed?.Invoke();
-            }, platformDependedOptions);
+            });
 
             return entries;
         }

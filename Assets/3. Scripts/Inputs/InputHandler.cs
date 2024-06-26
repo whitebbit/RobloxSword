@@ -19,29 +19,30 @@ namespace _3._Scripts.Inputs
                 switch (GBGames.deviceType)
                 {
                     case DeviceType.Mobile:
-                        if(!mobileInput.gameObject.activeSelf)
+                        if (!mobileInput.gameObject.activeSelf)
                             mobileInput.gameObject.SetActive(true);
+
                         return mobileInput;
                     case DeviceType.Desktop:
-                        if(mobileInput.gameObject.activeSelf)
+                        if (mobileInput.gameObject.activeSelf)
                             mobileInput.gameObject.SetActive(false);
                         return _desktopInput ??= new DesktopInput();
                     case DeviceType.Tablet:
                         return default;
                     case DeviceType.TV:
                         return default;
-                    default: 
+                    default:
                         return default;
                 }
             }
         }
 
-        public void SetInputState(bool state)
+        public void SetState(bool state)
         {
             switch (GBGames.deviceType)
             {
                 case DeviceType.Mobile:
-                    mobileInput.gameObject.SetActive(state);
+                    mobileInput.SetState(state);
                     break;
                 case DeviceType.Tablet:
                     break;
@@ -53,6 +54,5 @@ namespace _3._Scripts.Inputs
                     throw new ArgumentOutOfRangeException();
             }
         }
-        
     }
 }

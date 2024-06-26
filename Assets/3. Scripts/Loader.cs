@@ -30,24 +30,24 @@ namespace _3._Scripts
 
         private void GBGamesOnSaveLoadedCallback()
         {
+            GBGames.InGameLoadingStarted();
             StartCoroutine(InitializeLocalization());
         }
 
         private IEnumerator InitializeLocalization()
         {
             yield return LocalizationSettings.InitializationOperation;
-            
+
             var locale = LocalizationSettings.AvailableLocales.Locales.Find(l => l.Identifier.Code == GBGames.language);
-            
+
             if (locale != null)
             {
                 LocalizationSettings.SelectedLocale = locale;
             }
-            
+
             if (!IsMemorySufficient()) yield return FreeUpMemory();
 
             yield return LoadGameSceneAsync();
-            
         }
 
         private IEnumerator LoadGameSceneAsync()
@@ -56,15 +56,16 @@ namespace _3._Scripts
             asyncOperation.allowSceneActivation = false;
             while (!asyncOperation.isDone)
             {
-                var progress = Mathf.Clamp01(asyncOperation.progress / 0.9f); 
-                progressBar.value = progress;
+                var progress = Mathf.Clamp01(asyncOperation.progress / 0.9f);
+                if (progressBar != null)
+                    progressBar.value = progress;
 
                 if (asyncOperation.progress >= 0.9f)
                 {
                     asyncOperation.allowSceneActivation = true;
                 }
 
-                yield return null; 
+                yield return null;
             }
         }
 
@@ -87,8 +88,8 @@ namespace _3._Scripts
             // Выгружаем неиспользуемые ресурсы
             yield return Resources.UnloadUnusedAssets();
             // Запускаем сборщик мусора
-            System.GC.Collect();
-            System.GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
             // Подождите некоторое время, чтобы убедиться, что все очистки завершены
             yield return new WaitForSeconds(0.5f);

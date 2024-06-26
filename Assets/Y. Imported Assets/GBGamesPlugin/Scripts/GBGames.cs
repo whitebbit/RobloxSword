@@ -20,7 +20,7 @@ namespace GBGamesPlugin
         {
             _inGame = true;
             Singleton();
-            yield return new WaitUntil(() => Bridge.instance != null && Bridge.initialized);
+            yield return new WaitUntil(() => Bridge.instance != null && Bridge.Initialized);
             Storage();
             RemoteConfig();
             Advertisement();

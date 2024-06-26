@@ -1,5 +1,6 @@
 ﻿using _3._Scripts.Inputs.Interfaces;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace _3._Scripts.Inputs
 {
@@ -22,7 +23,13 @@ namespace _3._Scripts.Inputs
 
         public bool GetJump()
         {
+            EventSystem.current.SetSelectedGameObject(null);
             return Input.GetKeyDown(KeyCode.Space);
+        }
+
+        public bool GetInteract()
+        {
+            return Input.GetKeyDown(KeyCode.E);
         }
 
         public bool CanLook()

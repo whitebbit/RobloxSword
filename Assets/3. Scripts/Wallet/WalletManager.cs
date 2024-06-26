@@ -7,7 +7,7 @@ namespace _3._Scripts.Wallet
 {
     public static class WalletManager
     {
-        public static event Action<int, int> OnFirstCurrencyChange;
+        public static event Action<float, float> OnFirstCurrencyChange;
 
         public static float FirstCurrency
         {
@@ -15,11 +15,11 @@ namespace _3._Scripts.Wallet
             set
             {
                 GBGames.saves.walletSave.firstCurrency = value;
-                OnFirstCurrencyChange?.Invoke((int) FirstCurrency, (int) value);
+                OnFirstCurrencyChange?.Invoke((float) FirstCurrency, (float) value);
             }
         }
 
-        public static event Action<int, int> OnSecondCurrencyChange;
+        public static event Action<float, float> OnSecondCurrencyChange;
 
         public static float SecondCurrency
         {
@@ -27,7 +27,7 @@ namespace _3._Scripts.Wallet
             set
             {
                 GBGames.saves.walletSave.secondCurrency = value;
-                OnSecondCurrencyChange?.Invoke((int) SecondCurrency, (int) value);
+                OnSecondCurrencyChange?.Invoke((float) SecondCurrency, (float) value);
             }
         }
         

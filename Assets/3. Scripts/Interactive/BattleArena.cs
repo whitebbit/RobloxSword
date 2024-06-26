@@ -22,7 +22,6 @@ namespace _3._Scripts.Interactive
 
         [Tab("Positions")] [SerializeField]
         private Transform centerPoint;
-
         
         [Header("Enemy")]
         [SerializeField] private Transform enemyPoint;
@@ -48,7 +47,6 @@ namespace _3._Scripts.Interactive
         {
             _player = Player.Player.Instance;
             _miniGamePanel = UIManager.Instance.GetPanel<MiniGamePanel>();
-            _buttonsPanel = UIManager.Instance.GetPanel<ButtonsPanel>();
         }
 
         public void StartBattle(Enemy enemy)
@@ -76,7 +74,7 @@ namespace _3._Scripts.Interactive
 
         private void InitializeUI()
         {
-            _buttonsPanel.Enabled = false;
+            //_buttonsPanel.Enabled = false;
             _miniGamePanel.Enabled = true;
 
             _miniGamePanel.OnLose += HandleLose;
@@ -126,10 +124,9 @@ namespace _3._Scripts.Interactive
             _enemy.TeleportToStart();
             
             _miniGamePanel.Enabled = false;
-            _buttonsPanel.Enabled = true;
+           // _buttonsPanel.Enabled = true;
 
             CameraController.Instance.SwapToMain();
-            InputHandler.Instance.SetInputState(true);
         }
     }
 }

@@ -9,6 +9,7 @@ namespace _3._Scripts.Inputs.Interfaces
 
         public bool GetAction();
         public bool GetJump();
+        public bool GetInteract();
 
         public bool CanLook();
 

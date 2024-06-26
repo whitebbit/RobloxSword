@@ -32,10 +32,10 @@ namespace _3._Scripts.Currency
             switch (type)
             {
                 case CurrencyType.First:
-                    OnChange((int)WalletManager.FirstCurrency, (int)WalletManager.FirstCurrency);
+                    OnChange((float)WalletManager.FirstCurrency, (float)WalletManager.FirstCurrency);
                     break;
                 case CurrencyType.Second:
-                    OnChange((int)WalletManager.SecondCurrency, (int)WalletManager.SecondCurrency);
+                    OnChange((float)WalletManager.SecondCurrency, (float)WalletManager.SecondCurrency);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -48,11 +48,11 @@ namespace _3._Scripts.Currency
             {
                 case CurrencyType.First:
                     WalletManager.OnFirstCurrencyChange += OnChange;
-                    OnChange((int)WalletManager.FirstCurrency, (int)WalletManager.FirstCurrency);
+                    OnChange((float)WalletManager.FirstCurrency, (float)WalletManager.FirstCurrency);
                     break;
                 case CurrencyType.Second:
                     WalletManager.OnSecondCurrencyChange += OnChange;
-                    OnChange((int)WalletManager.SecondCurrency, (int)WalletManager.SecondCurrency);
+                    OnChange((float)WalletManager.SecondCurrency, (float)WalletManager.SecondCurrency);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -74,9 +74,9 @@ namespace _3._Scripts.Currency
             }
         }
 
-        private void OnChange(int oldValue, int newValue)
+        private void OnChange(float oldValue, float newValue)
         {
-            text.DOCounter(oldValue, newValue, 0.1f);
+            text.text = WalletManager.ConvertToWallet((decimal) newValue);
         }
     }
 }

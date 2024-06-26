@@ -2,7 +2,9 @@
 {
     public interface IInteractive
     {
-        public void Interact();
-        public void StopInteract();
+        void StartInteract();
+        void Interact();
+        
+        void StopInteract();
     }
 }

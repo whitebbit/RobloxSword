@@ -269,6 +269,22 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5461703773161259397
+  - m_Id: 11770450447310848
+    m_Localized: To return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11787104921198592
+    m_Localized: E
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15003125568118784
+    m_Localized: Take out the sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15006676172283904
+    m_Localized: Tap to increase your strength.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

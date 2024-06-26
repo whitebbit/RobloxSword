@@ -3,6 +3,7 @@ using _3._Scripts.Interactive;
 using _3._Scripts.Interactive.Interfaces;
 using _3._Scripts.Localization;
 using _3._Scripts.Player;
+using _3._Scripts.UI.Extensions;
 using _3._Scripts.Wallet;
 using UnityEngine;
 using UnityEngine.Localization.Components;
@@ -17,7 +18,8 @@ namespace _3._Scripts.Enemies
         [SerializeField] private BattleArena arena;
         [SerializeField] private LocalizeStringEvent text;
         [SerializeField] private LocalizeStringEvent nameText;
-
+        
+        private UseView _useTutorialObject;
         public EnemyData Data => data;
         public PlayerAnimator Animator => _animator;
 
@@ -28,16 +30,24 @@ namespace _3._Scripts.Enemies
 
         private void Awake()
         {
+            _useTutorialObject = GetComponentInChildren<UseView>();
+            _useTutorialObject.gameObject.SetActive(false);
             _animator = GetComponent<PlayerAnimator>();
         }
 
         private void Start()
         {
+            _animator.SetSpeed(0);
+            _animator.SetGrounded(true);
+            
             _startPosition = transform.position;
             _startRotation = transform.eulerAngles;
-            
-            _animator.SetGrounded(true);
+        }
+
+        private void OnEnable()
+        {
             _animator.SetSpeed(0);
+            _animator.SetGrounded(true);
             
             text.SetVariable("value", WalletManager.ConvertToWallet((decimal) data.CurrentStrength));
             nameText.SetReference(data.LocalizeID);
@@ -51,17 +61,21 @@ namespace _3._Scripts.Enemies
             nameText.gameObject.SetActive(true);
         }
 
+        public void StartInteract()
+        {
+            _useTutorialObject.gameObject.SetActive(true);
+        }
+
         public void Interact()
         {
             arena.StartBattle(this);
             text.gameObject.SetActive(false);
             nameText.gameObject.SetActive(false);
         }
-
-     
-
+        
         public void StopInteract()
         {
+            _useTutorialObject.gameObject.SetActive(false);
         }
     }
 }

@@ -18,16 +18,16 @@ namespace _3._Scripts.Pets
 {
     public class PetUnlocker : MonoBehaviour, IInteractive
     {
-        [Tab("Settings")]
-        [SerializeField] private int price;
+        [SerializeField] private Transform useTutorial;
+        
+        [Tab("Settings")] [SerializeField] private int price;
         [SerializeField] private float priceMultiplier;
-        
+
         [SerializeField] private List<PetData> data = new();
-        
+
         [Tab("Components")] [SerializeField] private Canvas canvas;
         [SerializeField] private TMP_Text priceText;
         [SerializeField] private Image currencyIcon;
-
 
         private float Price()
         {
@@ -43,31 +43,33 @@ namespace _3._Scripts.Pets
 
         private void Start()
         {
+            StopInteract();
             UpdatePrice();
         }
 
         private void OnEnable()
         {
-            WalletManager.OnSecondCurrencyChange += WalletManagerOnOnSecondCurrencyChange; 
+            WalletManager.OnSecondCurrencyChange += WalletManagerOnOnSecondCurrencyChange;
         }
+
         private void OnDisable()
         {
-            WalletManager.OnSecondCurrencyChange -= WalletManagerOnOnSecondCurrencyChange; 
+            WalletManager.OnSecondCurrencyChange -= WalletManagerOnOnSecondCurrencyChange;
         }
-        private void WalletManagerOnOnSecondCurrencyChange(int arg1, int arg2)
+
+        private void WalletManagerOnOnSecondCurrencyChange(float arg1, float arg2)
         {
             UpdatePrice();
         }
-        
+
         private void UnlockRandom()
         {
-
             var list = data.Where(p => !GBGames.saves.petSaves.Unlocked(p.ID)).ToList();
             if (list.Count <= 0) return;
 
             var rand = GetRandomItem(list);
             if (rand == null) return;
-            
+
             if (!WalletManager.TrySpend(CurrencyType.Second, Price())) return;
 
             GBGames.saves.petSaves.Unlock(rand.ID);
@@ -115,12 +117,12 @@ namespace _3._Scripts.Pets
         {
             var image = Configuration.Instance.GetCurrency(CurrencyType.Second).Icon;
             currencyIcon.sprite = image;
-            priceText.text = Price().ToString();
+            priceText.text = WalletManager.ConvertToWallet((decimal) Price());
         }
 
-        private void OnMouseDown()
+        public void StartInteract()
         {
-            UnlockRandom();
+            useTutorial.gameObject.SetActive(true);
         }
 
         public void Interact()
@@ -130,6 +132,7 @@ namespace _3._Scripts.Pets
 
         public void StopInteract()
         {
+            useTutorial.gameObject.SetActive(false);
         }
     }
 }

@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c93a02b6774c288a74ef95b5639978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   spawnPoint: {fileID: 6114455094181365872}
   petsBoosterMultiplier: 1
   giftsBoosterMultiplier: 1
@@ -1367,11 +1368,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5327970562577664490, guid: c03f91369a9feff4084f400591a450f3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000019047826
+      value: 0.000000019047837
       objectReference: {fileID: 0}
     - target: {fileID: 5327970562577664490, guid: c03f91369a9feff4084f400591a450f3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000026933784
+      value: -0.00000000269338
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4073,11 +4074,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5327970562577664490, guid: c03f91369a9feff4084f400591a450f3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000019047826
+      value: 0.000000019047837
       objectReference: {fileID: 0}
     - target: {fileID: 5327970562577664490, guid: c03f91369a9feff4084f400591a450f3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000026933784
+      value: -0.00000000269338
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4105,6 +4106,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 651054305389022884, guid: 20084845041a2454b9b1b709532858b2, type: 3}
+      propertyPath: cupsToUnlock
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 651054305389022884, guid: 20084845041a2454b9b1b709532858b2, type: 3}
+      propertyPath: swordToUnlock
+      value: 
+      objectReference: {fileID: 11400000, guid: 13698da847eb0024abecca3a4e9ac475, type: 2}
     - target: {fileID: 1864431194995284789, guid: 20084845041a2454b9b1b709532858b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.21
@@ -4143,6 +4152,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1864431194995284789, guid: 20084845041a2454b9b1b709532858b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8003632474168469812, guid: 20084845041a2454b9b1b709532858b2, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8003632474168469812, guid: 20084845041a2454b9b1b709532858b2, type: 3}

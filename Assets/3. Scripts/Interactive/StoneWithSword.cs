@@ -28,20 +28,21 @@ namespace _3._Scripts.Interactive
 
         [Tab("Sword")] [SerializeField] private SwordData swordData;
         [SerializeField] private SerializableTransform modelTransform;
-        [Tab("UI")] [SerializeField]
-        private Transform information;
-
+        [Tab("UI")] [SerializeField] private Transform information;
+        [SerializeField] private Transform useTutorialObject;
         
         [SerializeField] private LocalizeStringEvent swordName;
         [SerializeField] private LocalizeStringEvent recommendationText;
         [SerializeField] private ComplexityText complexityText;
-        
+
         [SerializeField] private CurrencyCounterEffect counterEffect;
+        
         private Transform _swordModel;
         private Swords.Sword _currentSword;
 
         private void Awake()
         {
+            useTutorialObject.gameObject.SetActive(false);
             InitializeSword();
             recommendationText.SetVariable("value",
                 WalletManager.ConvertToWallet((decimal) Mathf.Ceil(swordData.EnemyData.CurrentStrength * 1.5f)));
@@ -50,7 +51,6 @@ namespace _3._Scripts.Interactive
         private void Start()
         {
             complexityText.SetComplexity(swordData.Type);
-
         }
 
         private void InitializeSword()
@@ -64,29 +64,35 @@ namespace _3._Scripts.Interactive
             swordName.SetReference(swordData.EnemyData.LocalizeID);
         }
 
+        public void StartInteract()
+        {
+            useTutorialObject.gameObject.SetActive(true);
+        }
+        public event Action ONInteract;
+
         public void Interact()
         {
             _currentSword = Instantiate(swordData.Sword, transform);
             _swordModel.gameObject.SetActive(false);
             information.gameObject.SetActive(false);
-            
+
             InitializePlayer();
             InitializeUI();
 
             CameraController.Instance.SwapTo(virtualCamera);
+            
+            ONInteract?.Invoke();
         }
 
         public void StopInteract()
         {
-            // Add any necessary cleanup logic here
+            useTutorialObject.gameObject.SetActive(false);
         }
 
         private void InitializeUI()
         {
             var panel = UIManager.Instance.GetPanel<MiniGamePanel>();
-            var buttonsPanel = UIManager.Instance.GetPanel<ButtonsPanel>();
 
-            buttonsPanel.Enabled = false;
             panel.Enabled = true;
 
             panel.OnLose += OnLose;
@@ -107,13 +113,13 @@ namespace _3._Scripts.Interactive
             player.SwordHandler.SetGetState(_currentSword);
         }
 
+        public event Action ONInteractEnd;
+
+        
         private void OnLose()
         {
             var player = Player.Player.Instance;
-            var buttonsPanel = UIManager.Instance.GetPanel<ButtonsPanel>();
-
-
-            buttonsPanel.Enabled = true;
+            
             player.Animator.SetBool("WinSwordMiniGame", false);
             player.Animator.SetTrigger("EndSwordMiniGame");
 
@@ -125,8 +131,8 @@ namespace _3._Scripts.Interactive
 
             UIManager.Instance.GetPanel<MiniGamePanel>().Enabled = false;
             CameraController.Instance.SwapToMain();
-            InputHandler.Instance.SetInputState(true);
-
+            
+            ONInteractEnd?.Invoke();
         }
 
         private void OnWin()
@@ -139,6 +145,7 @@ namespace _3._Scripts.Interactive
             _currentSword = null;
 
             StartCoroutine(DelayWin(player));
+            
         }
 
         private void SetSwordAfterWin(Player.Player player)
@@ -162,22 +169,21 @@ namespace _3._Scripts.Interactive
         private IEnumerator DelayWin(Player.Player player)
         {
             var panel = UIManager.Instance.GetPanel<MiniGamePanel>();
-            var buttonsPanel = UIManager.Instance.GetPanel<ButtonsPanel>();
-
+            
             yield return new WaitForSeconds(2.5f);
 
-            buttonsPanel.Enabled = true;
             panel.Enabled = false;
 
             _swordModel.gameObject.SetActive(true);
             information.gameObject.SetActive(true);
 
             CameraController.Instance.SwapToMain();
-            EffectPanel.Instance.SpawnEffect(counterEffect).Initialize(CurrencyType.Second, swordData.EnemyData.CurrentCups);
+            EffectPanel.Instance.SpawnEffect(counterEffect)
+                .Initialize(CurrencyType.Second, swordData.EnemyData.CurrentCups);
             WalletManager.SecondCurrency += swordData.EnemyData.CurrentCups;
-            InputHandler.Instance.SetInputState(true);
-
+            //TODO: inputs state
             SetSwordAfterWin(player);
+            ONInteractEnd?.Invoke();
         }
     }
 }
