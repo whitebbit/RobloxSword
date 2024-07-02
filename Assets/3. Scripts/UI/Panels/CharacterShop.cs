@@ -47,6 +47,9 @@ namespace _3._Scripts.UI.Panels
             
             GBGames.saves.characterSaves.Unlock(id);
             Select(id);
+            
+            GBGames.saves.achievementSaves.Update("buy_skin", 1);
+
             return true;
         }
     }

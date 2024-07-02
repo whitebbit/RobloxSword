@@ -181,9 +181,13 @@ namespace _3._Scripts.Interactive
             EffectPanel.Instance.SpawnEffect(counterEffect)
                 .Initialize(CurrencyType.Second, swordData.EnemyData.CurrentCups);
             WalletManager.SecondCurrency += swordData.EnemyData.CurrentCups;
-            //TODO: inputs state
             SetSwordAfterWin(player);
             ONInteractEnd?.Invoke();
+            
+            GBGames.saves.achievementSaves.Update("1_sword", 1);
+            GBGames.saves.achievementSaves.Update("20_sword", 1);
+            GBGames.saves.achievementSaves.Update("100_sword", 1);
+            GBGames.saves.achievementSaves.Update("500_sword", 1);
         }
     }
 }

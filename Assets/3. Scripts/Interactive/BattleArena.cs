@@ -10,6 +10,7 @@ using _3._Scripts.UI.Panels;
 using _3._Scripts.Wallet;
 using Cinemachine;
 using DG.Tweening;
+using GBGamesPlugin;
 using UnityEngine;
 using VInspector;
 
@@ -117,6 +118,10 @@ namespace _3._Scripts.Interactive
 
             if (playerWon)
             {
+                GBGames.saves.achievementSaves.Update("1_enemy", 1);
+                GBGames.saves.achievementSaves.Update("50_enemy", 1);
+                GBGames.saves.achievementSaves.Update("500_enemy", 1);
+                
                 WalletManager.SecondCurrency += _enemy.Data.CurrentCups;
                 EffectPanel.Instance.SpawnEffect(counterEffect).Initialize(CurrencyType.Second, _enemy.Data.CurrentCups);
             }

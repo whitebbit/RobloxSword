@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23955ed6305f4d10a6927b912c20964d, type: 3}
+  m_Name: 1_sword
+  m_EditorClassIdentifier: 
+  id: 1_sword
+  goal: 1
+  gift: {fileID: 11400000, guid: 9dabc6c6e2232a14e925ad501aaf033b, type: 2}
+  titleID: achievement_1
+  icon: {fileID: 21300000, guid: 073e687a687a64137b4fe82914a8b1e1, type: 3}

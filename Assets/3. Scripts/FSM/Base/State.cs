@@ -10,7 +10,7 @@ namespace _3._Scripts.FSM.Base
         public event Action OnExitAction; 
         public virtual void OnEnter()
         {
-            Debug.Log($"{GetType()} - OnEnter");
+            //Debug.Log($"{GetType()} - OnEnter");
             OnEnterAction?.Invoke();
         }
 

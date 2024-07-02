@@ -51,7 +51,6 @@ namespace _3._Scripts.Bots
             while (true)
             {
                 var rand = Random.Range(0, 3);
-                Debug.Log(rand);
                 switch (rand)
                 {
                     case 0:

@@ -275,6 +275,54 @@ MonoBehaviour:
     m_Key: tap_tutorail
     m_Metadata:
       m_Items: []
+  - m_Id: 17265994007453696
+    m_Key: achievements
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17269587938779136
+    m_Key: achievement_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17275426217009152
+    m_Key: 20_sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17276257033134080
+    m_Key: 100_sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17276513477074944
+    m_Key: 500_sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17278014530396160
+    m_Key: buy_skin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17279172619673600
+    m_Key: 1_enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17279239858561024
+    m_Key: 50_enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17279308389294080
+    m_Key: 500_enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17280518521495552
+    m_Key: unlock_rare_pet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17280586368557056
+    m_Key: unlock_myth_pet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17280664923676672
+    m_Key: unlock_leg_pet
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

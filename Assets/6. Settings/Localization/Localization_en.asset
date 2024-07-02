@@ -290,6 +290,54 @@ MonoBehaviour:
     m_Localized: Tap to increase your strength.
     m_Metadata:
       m_Items: []
+  - m_Id: 17265994007453696
+    m_Localized: Achievements
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17269587938779136
+    m_Localized: Get one sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17275426217009152
+    m_Localized: Get 20 swords
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17276257033134080
+    m_Localized: Get 100 swords
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17276513477074944
+    m_Localized: Get 500 swords
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17278014530396160
+    m_Localized: Buy 1 skin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17279172619673600
+    m_Localized: Defeat 1 enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17279239858561024
+    m_Localized: Defeat 50 enemies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17279308389294080
+    m_Localized: Defeat 500 enemies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17280518521495552
+    m_Localized: Unlock the rare pet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17280586368557056
+    m_Localized: Unlock the mythical pet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17280664923676672
+    m_Localized: Unlock the legendary pet
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

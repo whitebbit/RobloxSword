@@ -75,6 +75,21 @@ namespace _3._Scripts.Pets
             GBGames.saves.petSaves.Unlock(rand.ID);
             GBGames.instance.Save();
             UpdatePrice();
+
+            switch (rand.Rarity)
+            {
+                case Rarity.Rare:
+                    GBGames.saves.achievementSaves.Update("unlock_rare_pet", 1);
+                    break;
+                case Rarity.Mythical:
+                    GBGames.saves.achievementSaves.Update("unlock_myth_pet", 1);
+                    break;
+                case Rarity.Legendary:
+                    GBGames.saves.achievementSaves.Update("unlock_leg_pet", 1);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         private PetData GetRandomItem(IEnumerable<PetData> items)
