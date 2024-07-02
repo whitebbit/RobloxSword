@@ -24,13 +24,17 @@ namespace _3._Scripts.UI.Elements
 
         private void OnChange(float _, float newValue)
         {
-            var current =
-                Configuration.Instance.AllCharacters.FirstOrDefault(c => c.ID == GBGames.saves.characterSaves.current);
+            // Получаем текущего персонажа игрока
+            var current = Configuration.Instance.AllCharacters
+                .FirstOrDefault(c => GBGames.saves.characterSaves.IsCurrent(c.ID));
 
-            var character = Configuration.Instance.AllCharacters.FirstOrDefault(c =>
-                current is not null && c.Price <= newValue && !GBGames.saves.characterSaves.Unlocked(c.ID) &&
-                c.Price > current.Price);
+            // Проверяем, есть ли персонажи, которые соответствуют условиям
+            var character = Configuration.Instance.AllCharacters
+                .Where(c => c.Price <= newValue && !GBGames.saves.characterSaves.Unlocked(c.ID))
+                .OrderByDescending(c => c.Booster)
+                .FirstOrDefault(c => c.Booster > current.Booster);
 
+            // Включаем или отключаем уведомление
             notification.gameObject.SetActive(character != null);
         }
     }

@@ -1,39 +1,39 @@
-﻿using UnityEngine;
+﻿using _3._Scripts.Config;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
 namespace _3._Scripts.Inputs.Utils
 {
-    public class FixedTouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    public class FixedTouchField : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
     {
-        private int _pointerId = -1;
-        private Vector2 _pointerOld;
+        [SerializeField] private RemoteConfig<float> minMovementThreshold;
+        private int _pointerId;
+        private Vector2 _startTouchPosition;
+        private Vector2 _currentTouchPosition;
+        private Vector2 _previousTouchPosition;
 
         public Vector2 Axis { get; private set; }
+
         public bool Pressed { get; private set; }
 
-        private void Update()
+        void Update()
         {
             if (Pressed)
             {
-                if (_pointerId >= 0 && _pointerId < Input.touches.Length)
+                var distance = Vector2.Distance(_currentTouchPosition, _previousTouchPosition);
+            
+                if (distance >= 0.75)
                 {
-                    var touch = Input.touches[_pointerId];
-                    if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
-                    {
-                        Axis = touch.position - _pointerOld;
-                        _pointerOld = touch.position;
-                    }
-                    else
-                    {
-                        Axis = Vector2.zero;
-                    }
+                    Axis = _currentTouchPosition - _startTouchPosition;
                 }
                 else
                 {
-                    Axis = (Vector2) Input.mousePosition - _pointerOld;
-                    _pointerOld = Input.mousePosition;
+                    Axis = Vector2.zero;
+                    _startTouchPosition = _currentTouchPosition;
                 }
+
+                _previousTouchPosition = _currentTouchPosition;
             }
             else
             {
@@ -43,15 +43,28 @@ namespace _3._Scripts.Inputs.Utils
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (Pressed) return;
             Pressed = true;
             _pointerId = eventData.pointerId;
-            _pointerOld = eventData.position;
+            _startTouchPosition = eventData.position;
+            _currentTouchPosition = _startTouchPosition;
+            _previousTouchPosition = _startTouchPosition;
+            Axis = Vector2.zero;  
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            if (Pressed && eventData.pointerId == _pointerId)
+            {
+                _currentTouchPosition = eventData.position;
+            }
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
+            if (!Pressed || eventData.pointerId != _pointerId) return;
             Pressed = false;
-            _pointerId = -1;
+            Axis = Vector2.zero;
         }
     }
 }

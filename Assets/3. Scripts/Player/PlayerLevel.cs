@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using _3._Scripts.Config;
 using _3._Scripts.Localization;
 using _3._Scripts.Wallet;
 using GBGamesPlugin;
@@ -30,10 +32,27 @@ namespace _3._Scripts.Player
 
         private void OnChange(float _, float newValue)
         {
-            var level = Math.Round(newValue / 1000);
-            _text.SetVariable("value", level.ToString());
+            if (newValue <= 0)
+            {
+                _text.SetVariable("value", 0.ToString());
+                Leaderboard.Leaderboard.Instance.UpdateScore(0);
+                return;
+            }
+            var normalizedPower = Math.Log10(newValue);
+            var swords = Configuration.Instance.SwordData.OrderBy(obj => obj.StrengthBooster).ToList();
+            var characters = Configuration.Instance.AllCharacters.OrderBy(obj => obj.Booster).ToList();
 
-            Leaderboard.Leaderboard.Instance.UpdateScore((int) level);
+            var currentSword =
+                Configuration.Instance.SwordData.FirstOrDefault(s => GBGames.saves.swordSaves.IsCurrent(s.ID));
+            var currentCharacter =
+                Configuration.Instance.AllCharacters.FirstOrDefault(s => GBGames.saves.characterSaves.IsCurrent(s.ID));
+            
+            double totalBooster = 1 + swords.IndexOf(currentSword) + characters.IndexOf(currentCharacter);
+            
+            var playerLevel = (int)(normalizedPower * totalBooster);
+            _text.SetVariable("value", playerLevel.ToString());
+
+            Leaderboard.Leaderboard.Instance.UpdateScore(playerLevel);
         }
     }
 }

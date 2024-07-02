@@ -11,7 +11,7 @@ namespace _3._Scripts.Swords.Scriptable
     {
         [Tab("Main")]
         [SerializeField] private string id;
-        [SerializeField] public float strengthBooster;
+        [SerializeField] private float strengthBooster;
         [SerializeField] private ComplexityType type;
         [Space]
         [SerializeField] private EnemyData enemyData;

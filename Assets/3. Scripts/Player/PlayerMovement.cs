@@ -14,7 +14,7 @@ namespace _3._Scripts.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-        private const float Gravity = -9.81f;
+        private const float Gravity = -9.81f *2.5f;
         private const float TurnSmoothTime = 0.1f;
 
         [Tab("Setting")] [SerializeField] private float speed;

@@ -27,9 +27,8 @@ namespace _3._Scripts.Leaderboard
 
         public void UpdateScore(float score)
         {
-            if (GBGames.GetLeaderboardScore(leaderboardName) >= score) return;
-
-            GBGames.SetLeaderboardScore(leaderboardName, score);
+            if (Math.Abs(GBGames.GetLeaderboardScore(leaderboardName) - score) > 0.1f)
+                GBGames.SetLeaderboardScore(leaderboardName, score);
         }
 
         private IEnumerator InitializeLeaderboard()
