@@ -27533,7 +27533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739004659}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28978413, y: -0.000000016468094, z: 0.0000000049861377, w: 0.95709205}
+  m_LocalRotation: {x: 0.28978413, y: 0.000000016468087, z: -0.0000000049861355, w: 0.95709205}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -71848,11 +71848,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1321973227414311994, guid: 45b32f9c1bf7fa042a81fe963152ad1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000019047837
+      value: -0.000000019047837
       objectReference: {fileID: 0}
     - target: {fileID: 1321973227414311994, guid: 45b32f9c1bf7fa042a81fe963152ad1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000000269338
+      value: 0.00000000269338
       objectReference: {fileID: 0}
     - target: {fileID: 1384428438416773421, guid: 45b32f9c1bf7fa042a81fe963152ad1b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -71872,11 +71872,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3552033653995327867, guid: 45b32f9c1bf7fa042a81fe963152ad1b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000019047837
+      value: 0.000000019047837
       objectReference: {fileID: 0}
     - target: {fileID: 3552033653995327867, guid: 45b32f9c1bf7fa042a81fe963152ad1b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000000269338
+      value: -0.00000000269338
       objectReference: {fileID: 0}
     - target: {fileID: 3823177186048465629, guid: 45b32f9c1bf7fa042a81fe963152ad1b, type: 3}
       propertyPath: m_Name
@@ -81760,8 +81760,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0e07c8fb8158b4d95bc5184c10777d99, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: d360c761a90c641d9b704106d9dacba1, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
