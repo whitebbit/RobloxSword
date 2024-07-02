@@ -79,7 +79,6 @@ namespace _3._Scripts.Player
 
         }
         
-
         private void DoIncome()
         {
             var obj = EffectPanel.Instance.SpawnEffect(effect);

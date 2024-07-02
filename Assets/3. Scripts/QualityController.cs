@@ -13,9 +13,11 @@ namespace _3._Scripts
     {
         [Tab("Assets")] [SerializeField] private UniversalRenderPipelineAsset pc;
         [SerializeField] private UniversalRenderPipelineAsset mobile;
-        [Tab("Components")] [SerializeField] private Light mainLight;
+        [Tab("Components")] 
+        [SerializeField] private Light mainLight;
         [SerializeField] private Volume postProcessing;
-
+        [SerializeField] private TimeManager timeManager;
+        
 
         private void Start()
         {
@@ -40,6 +42,13 @@ namespace _3._Scripts
                 DeviceType.Desktop => true,
                 _ => false
             };
+            timeManager.enabled = GBGames.deviceType switch
+            {
+                DeviceType.Mobile => false,
+                DeviceType.Tablet => true,
+                DeviceType.Desktop => true,
+                _ => false
+            };
 
             QualitySettings.SetQualityLevel(QualitySettings.names.ToList().IndexOf(GBGames.deviceType switch
             {
@@ -48,6 +57,14 @@ namespace _3._Scripts
                 DeviceType.Desktop => "PC",
                 _ => "Mobile"
             }));
+            
+            RenderSettings.ambientMode = GBGames.deviceType switch
+            {
+                DeviceType.Mobile => AmbientMode.Trilight,
+                DeviceType.Tablet => AmbientMode.Skybox,
+                DeviceType.Desktop => AmbientMode.Skybox,
+                _ => AmbientMode.Trilight
+            };
         }
     }
 }
