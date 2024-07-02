@@ -417,6 +417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 9FBX@T-Pose
       objectReference: {fileID: 0}
+    - target: {fileID: 5744451729075401977, guid: 0d2e29cd4f09d2c4b9f1438efb95a296, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2aa4a0b820ab754191cce28a9d38b19, type: 2}
     - target: {fileID: 5866666021909216657, guid: 0d2e29cd4f09d2c4b9f1438efb95a296, type: 3}
       propertyPath: m_Enabled
       value: 0
